@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>운동 프로그램 업데이트</title>
+  </head>
+  <!-- 
+    private String rate;    //별점
+    private String programLevel;   //프로그램이 초급자용인지 고급자용인지
+    private String programGoal;  //다이어트 프로그램인지
+    private String img;
+    private String programIntro; //프로그램 소개글
+    private String programTitle; // 프로그램 제목 -->
+  <style>
+    #input {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+    }
+    ul {
+    display: flex;
+    flex-wrap: wrap; /* 이 속성을 추가하여 li 요소가 줄바꿈됩니다 */
+    flex-direction: row;
+    width: 1000px;
+    height: 100vh;
+    padding: 0; /* ul의 기본 패딩 제거 */
+    list-style: none; /* 기본 목록 스타일 제거 */
+
+  }
+  li {
+    font-size: 11px;
+    width: 200px;
+    margin: 5px; /* 각 li 요소 간격을 위해 마진 추가 */
+    border: 1px solid #ccc; /* 시각적 구분을 위한 테두리 추가 */
+    box-sizing: border-box; /* 테두리를 요소 크기에 포함시킵니다 */
+    border: 1px solid black;
+  }
+  </style>
+  <body>
+    <form class="level">
+      <select>
+        <option>자신의 운동경력을 선택해주세요.</option>
+        <option value="입문">입문 수준</option>
+        <option value="초중급">초중급 수준</option>
+        <option value="중급">중급 수준</option>
+        <option value="고급">고급 수준</option>
+      </select>
+    </form>
+    <div class="goal">
+      <select>
+        <option value="다이어트">운동목적</option>
+        <option value="다이어트">다이어트</option>
+        <option value="근력증가">근력증가</option>
+      </select>
+    </form>
+    <form id="input">
+      <input placeholder="프로그램 제목" />
+      <textarea cols="35" rows="15"></textarea>
+      <input type="file" id="file"/>
+    </div>
+    <button style="margin-top: 50px;">프로그램 포스팅</button>
+    <div>
+      <ul>
+      </ul>
+    </div>
+  </body>
+  <script src="createProgram.js"></script>
+</html>
