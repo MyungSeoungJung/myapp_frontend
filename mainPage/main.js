@@ -5,9 +5,11 @@ console.log(username);
     const response = await fetch ("http://localhost:8080/user/main",{
         headers : {
          Authorization: `Bearer ${getCookie(
-            "token"
+            "token"   //토큰을 get해서 
          )}`,   
         }
-    });  //get으로 요청보내서 유저이름 받아오기
+    });  //함수 구현
+    const result = await response.json();
+    console.log(result);
 
-})();
+})(); // 즉시실행 
