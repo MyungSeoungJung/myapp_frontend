@@ -57,17 +57,33 @@ level.forEach(item => {
     });
 
 
+
 // ------------------------------------------------회원 운동목적
 let usergoal = ""; //회원 목적 저장 변수 
 clickedsex = null;
+const dietDropBox = document.querySelector("#diet");
+const bulkDropBox = document.querySelector("#bulk");
+dietDropBox.style.display = "none"
+bulkDropBox.style.display = "none"
  Goal.forEach(item => {
  item.addEventListener("click", (e) => {
 e.preventDefault();
     if(e.target == Goal[0]){
         usergoal = "다이어트";
+        dietDropBox.style.display = "block";
+        dietDropBox.addEventListener("mouseleave",()=>{
+            dietDropBox.style.display = "none";
+        })
+     
     }else if (e.target == Goal[1]){
         usergoal = "근력운동";
+        bulkDropBox.style.display = "block";
+        bulkDropBox.addEventListener("mouseleave",()=>{
+            bulkDropBox.style.display = "none";
+        })
+     
     }
+    
 
     if(clickedsex != null && clickedsex !== item){
     clickedsex.classList.remove('clicked');
@@ -75,6 +91,12 @@ e.preventDefault();
 item.classList.toggle('clicked');
 clickedsex = item;
 console.log(usergoal); 
+
+
+
+
+
+
 }) //다이어트 item foreach문
 }); // 다이어트 목적 클릭이벤트
 
@@ -114,4 +136,6 @@ const response = await fetch("http://localhost:8080/user/signup",
 //     alert("회원가입 실패");
 // }
 }); //회원가입 클릭 버튼시 제출
+
+
 
