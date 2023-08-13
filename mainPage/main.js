@@ -9,7 +9,7 @@ console.log(username);
          )}`,   
         }
     });  //함수 구현
-    const result = await response.json();
+    const result = await response.json(); //
     console.log(result);
 
 })(); // 즉시실행 
