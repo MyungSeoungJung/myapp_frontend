@@ -12,4 +12,9 @@ console.log(username);
     const result = await response.json(); //
     console.log(result);
 
+    username.textContent =  result.name + "님";
+    // if (result.programName == null) {
+    //     alert("프로그램을 선택하지않으셨습니다")
+        
+    // }
 })(); // 즉시실행 

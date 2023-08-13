@@ -131,12 +131,12 @@ const response = await fetch("http://localhost:8080/user/signup",
     })
 }
 );
-// if (response.status === 201) {
-//     // 이동하고자 하는 페이지 URL로 변경해주세요.
-//     window.location.href = "http://127.0.0.1:5500/SPRING/myCoach.html/signUpchoiceProgram/choiceProgram.html";
-// } else {
-//     // 실패한 경우 처리
-//     alert("회원가입 실패");
-// }
+if (response.status === 201) {
+    // 이동하고자 하는 페이지 URL로 변경해주세요.
+    window.location.href = "http://localhost:5500/index.html";
+} else {
+    // 실패한 경우 처리
+    alert("회원가입 실패");
+}
 }); //회원가입 클릭 버튼시 제출
 

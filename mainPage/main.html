@@ -5,11 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인페이지</title>
 </head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    /* ---------------------------header-------------------- */
+    header {
+        width: 100vw;
+        height: 100px;
+        display: flex;
+        justify-content: ce;
+    }
+    .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    #header-right {
+        display: flex;
+    }
+
+ 
+    header a {
+        margin-left: 20px;
+    }
+/* ---------------------------banner------ul---------------- */
+ #banner{
+    width: 100vw;
+    background-color: rgb(184, 184, 184);
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+div ul{
+    width: 1300px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 70px;
+}
+li{
+    display: flex;
+    width: 150px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.68); 
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: background-color 0.25s ease-in, color 0.25s ease-in;
+}
+li:hover{
+    transition: background-color 0.15s, color 0.15s;
+    background-color: rgb(245, 245, 245);
+    color: black;
+}
+/* ---------------------------banner------ul---------------- */
+
+
+</style>
 <body>
     <script src="auth.js"></script>
-    <h3>메인페이지</h3>
 
-    <p id="username">유저 이름 띄우는 곳</p>
+    <header>
+        <div class="header-wrapper">
+            <div>
+                <!-- 타이틀 가운데 넣기위한 div태그 -->
+            </div>
+            <div>
+                <h1>MyCoach</h1>
+            </div>
+            <div id="header-right">
+                <div id="username"></div>
+                <a href="">LOGOUT</a>
+            </div>
+        </div>
+    </header>
+    <div id="banner">
+        <ul>
+            <li>나의 운동</li>
+            <li>영양 계획</li>
+            <li>운동 프로그램</li>
+            <li>커뮤니티</li>
+            <li>코치 소개</li>
+        </ul>
+    </div>
 </body>
 <script src="main.js"></script>
 </html>
