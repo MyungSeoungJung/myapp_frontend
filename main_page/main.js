@@ -1,7 +1,3 @@
-const username = document.querySelector("#username")
-console.log(username);
-
-
 
 (async() => {
     const response = await fetch ("http://localhost:8080/user/main",{
@@ -20,3 +16,4 @@ console.log(username);
         
     // }
 })(); // 즉시실행 
+

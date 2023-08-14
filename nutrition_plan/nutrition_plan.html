@@ -9,8 +9,21 @@
     body {
       margin: 0;
       padding: 0 auto;
+      /* -------------------------top_banner----------------------- */
     }
     #top_banner {
+      width: 100vw;
+      background-color: rgb(170, 170, 170);
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+    }
+    #top_banner #top_banner_text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 200px;
     }
     /* --------------------nav---------------------------- */
     #nav_contain {
@@ -21,39 +34,146 @@
       display: flex;
       flex-direction: row;
       background-color: black;
-      height: 70px;
+      height: 80px;
       color: white;
-      width: 1800px;
+      width: 97.5vw;
       justify-content: space-between;
       align-items: center;
-      margin-top: 30px;
+      margin-top: 25px;
     }
     #nav_item {
       display: flex;
-      width: 600px;
+      width: 700px;
       justify-content: space-between;
       align-items: center;
-      margin-right: 30px;
+      margin-right: 100px;
     }
     nav h1 {
       margin-left: 30px;
     }
-    /* --------------------nav---------------------------- */
+    /* 먹어야 될 칼로리 글자  */
+    section {
+      width: 100vw;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    /* -----------------매크로 띄우는 곳---------------------------- */
+    main {
+      display: flex;
+      width: 100vw;
+      justify-content: space-evenly;
+      margin-top: 40px;
+      margin-bottom: 100px;
+    }
+    main .graph_contain {
+      background-color: rgb(184, 184, 184);
+      width: 200px;
+      height: 200px;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      border-radius: 50px;
+    }
+    .graph_contain p:nth-of-type(1) {
+      flex: 1;
+    }
+    .macro {
+      flex: 1;
+    }
+    .graph_contain div:last-child {
+      flex: 1;
+    }
+    /* 애니메이션 */
+    .progressbar {
+      width: 80%;
+      height: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #ccc;
+      position: relative;
+    }
+    .progressbar::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 15px;
+      width: 0;
+      background: rgb(9, 218, 44);
+      animation: progress 1s ease forwards;
+    }
+    @keyframes progress {
+      0% {
+        width: 0px;
+      }
+      100% {
+        width: 80%;
+      }
+    }
   </style>
   <body>
-    <div id="top_banner"></div>
-    <div id="nav_contain">
-      <nav id="nav">
-        <div><h1>My Coach</h1></div>
-        <div id="nav_item">
-          <div>나의 운동</div>
-          <div>영양 계획</div>
-          <div>운동 프로그램</div>
-          <div>커뮤니티</div>
-          <div>코치 소개</div>
-        </div>
-        <div><!-- 위치조정 위한 div 태그 --></div>
-      </nav>
+    <!-- top banner -->
+    <div id="top_banner">
+      <div id="nav_contain">
+        <nav id="nav">
+          <div><h1>My Coach</h1></div>
+          <div id="nav_item">
+            <div>나의 운동</div>
+            <div>영양 계획</div>
+            <div>운동 프로그램</div>
+            <div>커뮤니티</div>
+            <div>코치 소개</div>
+          </div>
+          <div><!-- 위치조정 위한 div 태그 --></div>
+        </nav>
+      </div>
+      <div id="top_banner_text">
+        <p>귀하의 개인정보를 바탕으로</p>
+        <p>권장되는 3대 영 양소 섭취량을 안내해 드리겠습니다</p>
+      </div>
+      <!-- nav_contain  -->
     </div>
+    <!-- 먹어야 될 칼로리 -->
+    <section>
+      <h2>일일 권장 칼로리 섭취량</h2>
+      <p id="Calorie"></p>
+    </section>
+    <!-- main 매크로 -->
+    <main>
+      <div class="graph_contain">
+        <p>탄수화물</p>
+        <h2 class="macro"></h2>
+        <div class="progressbar"></div>
+        <div>
+          <!-- flex위한 태그 -->
+        </div>
+      </div>
+
+      <div class="graph_contain">
+        <p>단백질</p>
+        <h2 class="macro"></h2>
+        <div class="progressbar"></div>
+        <div>
+          <!-- flex위한 태그 -->
+        </div>
+      </div>
+
+      <div class="graph_contain">
+        <p>지방</p>
+        <h2 class="macro"></h2>
+        <div class="progressbar"></div>
+        <div>
+          <!-- flex위한 태그 -->
+        </div>
+      </div>
+    </main>
+
+    <!-- main -->
   </body>
+  <script src="nutrition_plan.js"></script>
 </html>
