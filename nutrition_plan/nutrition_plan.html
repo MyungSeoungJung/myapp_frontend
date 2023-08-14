@@ -6,10 +6,18 @@
     <title>Document</title>
   </head>
   <style>
+    /* 전체 */
     body {
       margin: 0;
       padding: 0 auto;
       /* -------------------------top_banner----------------------- */
+    }
+    a {
+      text-decoration: none;
+    }
+    a:visited {
+      text-decoration: none;
+      color: inherit; /* 링크의 기본 색상을 상속받음 */
     }
     #top_banner {
       width: 100vw;
@@ -121,10 +129,12 @@
     <div id="top_banner">
       <div id="nav_contain">
         <nav id="nav">
-          <div><h1>My Coach</h1></div>
+          <div>
+            <a href="/main_page/main.html"><h1>My Coach</h1></a>
+          </div>
           <div id="nav_item">
-            <div>나의 운동</div>
             <div>영양 계획</div>
+            <div>나의 운동</div>
             <div>운동 프로그램</div>
             <div>커뮤니티</div>
             <div>코치 소개</div>
@@ -172,7 +182,6 @@
         </div>
       </div>
     </main>
-
     <!-- main -->
   </body>
   <script src="nutrition_plan.js"></script>
