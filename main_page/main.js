@@ -10,8 +10,8 @@ function creatProgram(img,programGoal,programIntro,programTitle){
 
     ` <div class="program_wrapper">
           <div class="program_container">
-            <div class="img">${img}</div>
-            <div>
+            <div class="img"><img src="${img}"></div>
+            <div class = "text">
               <div class="title">${programTitle}</div>
               <div class="content">${programIntro}</div>
             </div>
@@ -37,27 +37,42 @@ function creatProgram(img,programGoal,programIntro,programTitle){
     // -------------추천 프로그램 띄우는 코드--------------------
     recommend_program.style.display ="none";
 
-    // if (result.programName == null) {
-    //     alert("프로그램이 선택되지 않았습니다 추천 프로그램을 띄워드릴게요")
-    //     recommend_program.style.display ="block";
-    // }
+    if (result.programName == null) {
+        alert("프로그램이 선택되지 않았습니다 추천 프로그램을 띄워드릴게요")
+        recommend_program.style.display ="block";
+    }
     // 추천 프로그램 가져오기
 
     (async () =>  {
     const response = await fetch ("http://localhost:8080/user/recommendProgram")
-
+     
     const result = await response.json();
-    console.log(result[0].programTitle);
+
+    // for (let item of result) {
+    //     recommend_program_content.append(
+    //         creatProgram(
+    //        item.img,
+    //        item.programGoal, 
+    //        item.programIntro, 
+    //        item.programTitle, 
+    //       )
+    //     );
+    //   }
+  let count = 0;
     for (let item of result) {
-        recommend_program_content.prepend(
-            creatProgram(
+    if (count >= 3) {
+        break;
+    }
+    recommend_program_content.append(
+        creatProgram(
             item.img,
-           item.programGoal, 
-           item.programIntro, 
-           item.programTitle, 
-          )
-        );
-      }
+            item.programGoal, 
+            item.programIntro, 
+            item.programTitle
+        )
+    );
+    count++;
+}
     })();
 
     // 선택 프로그램 보내기

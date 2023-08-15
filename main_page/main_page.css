@@ -13,7 +13,7 @@
     text-decoration: none;
     color: inherit; /* 링크의 기본 색상을 상속받음 */
   }
-  /* ---------------------------header-------------------- */
+  /* ---------------------------프로그램 추천창-------------------- */
   header {
     width: 100vw;
     height: 100px;
@@ -35,6 +35,7 @@
   header a {
     margin-left: 20px;
   }
+  
   /* ---------------------------banner------ul---------------- */
   #banner {
     width: 100vw;
@@ -68,3 +69,4 @@
     background-color: rgb(250, 250, 250);
     color: black;
   }
+

@@ -77,7 +77,6 @@ const result = await response.json();
 const ul = document.querySelector("ul");
 
 const { data } = result;
-console.log(data.programLevel);
 ul.prepend(creatLi (
   data.programLevel,
   data.programGoal,
