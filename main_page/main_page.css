@@ -31,8 +31,10 @@
   #header-right {
     display: flex;
   }
-
-  header a {
+  header h1 {
+    margin-left: 110px;
+  }
+  header #logout {
     margin-left: 20px;
   }
   
@@ -52,6 +54,7 @@
     flex-direction: row;
     justify-content: space-around;
     margin-top: 70px;
+    margin-right: 50px;
   }
   li {
     display: flex;
