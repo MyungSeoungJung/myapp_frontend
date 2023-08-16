@@ -7,7 +7,7 @@
 
 }
 #recommend_program_content{
-margin-left: 25vw;
+margin: auto;
 margin-top: 100px;
 display: flex;
 flex-direction: column;
@@ -55,3 +55,32 @@ background-color: white;
   padding-top: 10px;
 }
 
+/* -------------------완료 확인창------------------ */
+.complete_alert{
+  display:flex;
+  border-radius: 20px;
+  width: 500px;
+  height: 400px;
+  background-color: white;
+  margin: auto;
+  margin-top: 200px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.complete_alert p:nth-of-type(1) {
+  margin-top: 100px;
+  flex: 0.5;
+}
+.complete_alert p:nth-of-type(1) {
+  flex: 0.5;
+}
+.complete_alert div {
+  flex: 2;
+}
+#complete_alert_button{
+  margin-top: 50px;
+  width: 200px;
+  height: 40px;
+}

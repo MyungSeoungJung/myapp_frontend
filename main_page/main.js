@@ -114,6 +114,19 @@ function creatProgram(
           }),
         }); //fetch
       })(); //즉시 실행
+      recommend_program_content.style.display = "none";
+
+      const complete_alert = document.createElement("div");
+      recommend_program.append(complete_alert);
+      complete_alert.classList = "complete_alert";
+      complete_alert.innerHTML = `
+      <p>축하합니다! </p>
+      <p>선택하신 운동 프로그램은 <strong>${title}</strong>입니다.</p>
+     <div> <button id ='complete_alert_button'> 완료 </button> </div>`;
+      complete_alert_button.addEventListener("click", (e) => {
+        e.preventDefault();
+        recommend_program.style.display = "none";
+      });
     } //if문
   }); // 이벤트 리스너
 })(); // 즉시실행
