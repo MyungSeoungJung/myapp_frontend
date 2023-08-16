@@ -75,14 +75,14 @@ function creatProgram(img,programGoal,programIntro,programTitle){
 }
     })();
 
-    // 선택 프로그램 보내기
-    // recommend_program_select.forEach(item => {
-    //     item.addEventListener("click", (e) => {
-    //         e.preventDefault();
+    // 선택 프로그램 서버 요청
+    recommend_program_select.forEach(item => {
+        item.addEventListener("click", (e) => {
+            e.preventDefault();
             
-    //     })
+        })
         
-    // });
+    });
 
 })(); // 즉시실행 
 
