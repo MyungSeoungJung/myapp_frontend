@@ -97,22 +97,25 @@ function creatProgram(
       //   const program_level = programContainer.getAttribute("data-level");
 
       (async () => {
-        const response = fetch("http://localhost:8080/user/selectProgram", {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${getCookie(
-              "token" //토큰을 get해서
-            )}`,
-            "content-type": "application/json",
-          },
-          body: JSON.stringify({
-            // img: img,
-            programTitle: title,
-            // programIntro: content,
-            // programGoal: program_goal,
-            // programLevel: program_level,
-          }),
-        }); //fetch
+        const response = await fetch(
+          "http://localhost:8080/user/selectProgram",
+          {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${getCookie(
+                "token" //토큰을 get해서
+              )}`,
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({
+              // img: img,
+              programTitle: title,
+              // programIntro: content,
+              // programGoal: program_goal,
+              // programLevel: program_level,
+            }),
+          }
+        ); //fetch
       })(); //즉시 실행
       recommend_program_content.style.display = "none";
 
@@ -122,10 +125,12 @@ function creatProgram(
       complete_alert.innerHTML = `
       <p>축하합니다! </p>
       <p>선택하신 운동 프로그램은 <strong>${title}</strong>입니다.</p>
-     <div> <button id ='complete_alert_button'> 완료 </button> </div>`;
+      <p>사용자 정보 갱신을 위해 다시 로그인해주세요</p>
+     <div> <button id ='complete_alert_button'> 로그인 페이지로 이동 </button> </div>`;
       complete_alert_button.addEventListener("click", (e) => {
         e.preventDefault();
         recommend_program.style.display = "none";
+        window.location.href = "/index.html";
       });
     } //if문
   }); // 이벤트 리스너
