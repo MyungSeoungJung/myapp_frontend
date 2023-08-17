@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/recommend_program/recommend_program.css" />
     <title>회원가입</title>
   </head>
   <style>
     main {
       margin: 0 auto;
       padding: 0;
+      position: absolute;
     }
     input {
       width: 300px;
@@ -44,6 +46,13 @@
     .dropdown {
       display: flex;
       flex-direction: row;
+    }
+    footer {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      height: 200px;
+      justify-content: space-between;
     }
   </style>
   <body>
@@ -114,9 +123,30 @@
         </div>
       </form>
       <footer>
+        <button id="recommend_program_button">운동 추천 받기</button>
         <button id="complete">회원가입</button>
       </footer>
     </main>
+    <!-- program 선택창-->
+    <div id="recommend_program">
+      <div id="recommend_program_content">
+        <h1>MyCoach</h1>
+        <h3>입력하신 인적사항을 기반으로</h3>
+        <h3>최적의 운동 프로그램을 제안드리겠습니다.</h3>
+
+        <!-- 첫번째 -->
+        <!-- <div class="program_wrapper">
+              <div class="program_container">
+                <div class="img">왼쪽</div>
+                <div>
+                  <div class="title">제목</div>
+                  <div class="content">컨텐츠</div>
+                </div>
+              </div>
+            </div> -->
+      </div>
+      <!-- 실제 컨텐츠 -->
+    </div>
   </body>
   <script src="sign_up.js"></script>
 </html>
