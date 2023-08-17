@@ -1,123 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>로그인</title>
-  </head>
-  <style>
-  
-    *{
-      font-size: 14px;
-      margin: 0;
-      padding: 0 auto;
-      box-sizing: border-box
-    }
-    a{
-      text-decoration: none;
-    }
-    a:visited {
-    text-decoration: none;
-    color: inherit; 
-  }
-    main{
-      display: flex;
-      width: 100vw;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
-    }
-    /* 전체 감싸는 메인영역 */
-    section{  
-      height: 500px;
-      width: 500px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
- /*  글씨 영역 */
- section > div:first-of-type {
-  display: flex;
-  width: 500px;
-  flex: 2;
-  flex-direction: column;
-  align-items: center;
- }
- section > div div:nth-of-type(n){
-  font-size: 2.6rem;
-  flex: 1;
- }
- section > div div:nth-of-type(3){ 
-  /* 밑줄 */
-  border-top: 1px solid #f3f3f4;
-  padding-top: 20px;
-  
- }
-/* 입력 폼 */
-   section > div:nth-of-type(2) form{
-      margin-top: 30px;
-      width: 350px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-    }
-    input {
-      border: none;
-      border-radius: 10px;
-      background-color: #f3f3f4;
-      margin-bottom: 30px;
-      width: 100%;
-      height: 40px;
-      margin-top: 5px;
-    }
 
-    button{
-      width: 100%;
-      height: 50px;
-      border-radius: 10px;
-      border: none;
-      background-color: #0D0c22;
-      color: white;
-    }
-   strong{
-    font-size: 1.1rem;
-   }
-   form > div:last-child{
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>로그인</title>
+</head>
+<style>
+  * {
+    font-size: 14px;
+    margin: 0;
+    padding: 0 auto;
+    box-sizing: border-box
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  #main_container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* 비디오 */
+  aside {
+    width: 400px;
+  }
+
+  aside:nth-of-type(2) {
+    flex: 0.6;
+  }
+
+  #fullscreen-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateX(-40%);
+
+  }
+
+  /* 메인 영역 */
+  main {
+    flex: 0.4;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    position: relative;
+    background-color: white;
+  }
+
+  /* 섹션 */
+  section {
+    width: 500px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /*  글씨 영역 */
+  section>div:first-of-type {
+    display: flex;
     width: 100%;
-     margin-top: 5px;
+    flex: 0.7;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section>div>div:nth-of-type(n) {
+    font-size: 2rem;
+    flex: 1;
+    text-align: center;
+  }
+
+  /* section > div > div:nth-last-of-type(2){
+  margin-bottom: 5px;
+ } */
+  section>div>div:nth-of-type(2) {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+
+  section>div>div:nth-of-type(3) {
+    /* 밑줄 */
+    border-top: 1px solid #f3f3f4;
+    padding-top: 10px;
+
+  }
+
+  /* 입력 폼 */
+  section>div:nth-of-type(2) {
+    width: 80%;
+  }
+
+  section>div:nth-of-type(2) form {
+    margin-top: 10px;
+    width: 100%;
+    flex: 0.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  input {
+    border: none;
+    border-radius: 10px;
+    background-color: #f3f3f4;
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+  }
+
+  button {
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #0D0c22;
+    color: white;
+    margin-bottom: 5px;
+  }
+
+  strong {
+    font-size: 1.1rem;
+  }
+
+  form>div:nth-of-type(2) {
+    margin-top: 30px;
+  }
+
+  form>div:last-child {
+    width: 100%;
+    font-size: 0.9rem;
+    text-align: right;
+    padding: 0;
+  }
+
+  h3 {
     font-size: 0.9rem;
     text-align: right;
   }
-  h3{
-    font-size: 0.9rem;
-    text-align: right;
-   }
-  </style>
-  <body>
+</style>
+
+<body>
+  <div id="main_container">
+    <aside>
+      <video id="fullscreen-video" autoplay loop muted>
+        <source src="/img/video/pexels-tima-miroshnichenko-6390166 (2160p).mp4" type="video/mp4">
+    </aside>
     <main>
-    <section>
-      <div>
-        <div>An indispensable platform</div>
-        <div>for fitness enthusiasts.</div>
-       
-        <div>M y C o a c h</div>
-      </div>
-      <div>
-      <form action="http://localhost:8080/user/signin" method="post">
-       <div><strong>PhoneNumber</strong></div>
-        <input name="phone" />
-        <div><strong>PassWord</strong></div>
-        <input name="password" />
-        <!-- 회원가입 링크 -->
-        <button>LogIn</button>
-        <div><a href="/sign_up/sign_up.html"><h3>회원가입</h3></a></div>
-      </div>
-    </section>
+      <section></section>
+      <section>
+        <div>
+          <div>An indispensable platform</div>
+          <div>For fitness enthusiasts.</div>
+          <div>M y C o a c h</div>
+        </div>
+        <div>
+          <!-- 서버에 바로 제출 -->
+          <form action="http://localhost:8080/user/signin" method="post">
+            <div><strong>PhoneNumber</strong></div>
+            <input name="phone" />
+            <div><strong>PassWord</strong></div>
+            <input name="password" />
+            <!-- 회원가입 링크 -->
+            <button>Sign In</button>
+            <div><a href="/sign_up/sign_up.html">
+                <h3>Sign up</h3>
+              </a></div>
+        </div>
+      </section>
+      <section></section>
     </main>
-  </body>
-  <!-- 리다이렉트로해서 쿠키를 가지고있는 상태가 되어야하는데 자바스크립트로 앵커링크로 옮기면 쿠키를 안가지고있는채 다른 페이지로 옮겨짐 -->
-  <!-- <script src="Login.js"></script> -->
+    <aside></aside>
+  </div>
+</body>
+<!-- 리다이렉트로해서 쿠키를 가지고있는 상태가 되어야하는데 자바스크립트로 앵커링크로 옮기면 쿠키를 안가지고있는채 다른 페이지로 옮겨짐 -->
+
 </html>
