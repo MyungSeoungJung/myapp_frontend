@@ -74,7 +74,7 @@ let userActivity = "";
 // 드롭 다운 선택 활동량 / 난이도 수준
 activity.forEach((item) => {
   item.addEventListener("change", (e) => {
-    e.preventDefault;
+    e.preventDefault();
     userActivity = parseFloat(e.target.value);
     console.log(userActivity);
   });
@@ -130,24 +130,17 @@ Goal.forEach((item) => {
   }); //다이어트 item foreach문
 }); // 다이어트 목적 클릭이벤트
 
+// -------------버튼 클릭하면 추천 프로그램 화면에 보이게 함-------------------
+
+recommend_program.style.display = "none";
 // 서버에서 추천 운동 프로그램 GET
-(async () => {
+recommend_program_btn.addEventListener("click", async () => {
+  recommend_program.style.display = "block";
+
   const response = await fetch(
     "http://localhost:8080/program/recommendProgram"
   );
-
   const result = await response.json();
-
-  // for (let item of result) {
-  //     recommend_program_content.append(
-  //         creatProgram(
-  //        item.img,
-  //        item.programGoal,
-  //        item.programIntro,
-  //        item.programTitle,
-  //       )
-  //     );
-  //   }
   let count = 0;
   for (let item of result) {
     if (count >= 3) {
@@ -165,17 +158,17 @@ Goal.forEach((item) => {
     );
     count++;
   }
-})();
+});
 
-// 추천 운동프로그램 띄우는 코드
-let = title = "";
+// 추천 운동프로그램 선택
+let title = "";
 recommend_program_content.addEventListener("click", (e) => {
   e.preventDefault();
   const programContainer = e.target.closest(".program_container");
   if (programContainer) {
     title = programContainer.querySelector(".title").textContent; //클릭시 클릭한 운동 프로그램 value 선택
-
     recommend_program_content.style.display = "none";
+
     const complete_alert = document.createElement("div"); // div만들어서 알림창 띄우기
     recommend_program.append(complete_alert);
     complete_alert.classList = "complete_alert";
@@ -184,7 +177,9 @@ recommend_program_content.addEventListener("click", (e) => {
         <p>선택하신 운동 프로그램은 <strong>${title}</strong>입니다.</p>
         <p>사용자 정보 갱신을 위해 다시 로그인해주세요</p>
        <div> <button id ='complete_alert_button'> 로그인 페이지로 이동 </button> </div>`;
-
+    const complete_alert_button = document.querySelector(
+      "#complete_alert_button"
+    );
     complete_alert_button.addEventListener("click", (e) => {
       //클릭하면 창 닫기
       e.preventDefault();
@@ -192,12 +187,6 @@ recommend_program_content.addEventListener("click", (e) => {
     });
   } //if문
 }); // 이벤트 리스너
-
-// -------------버튼 클릭하면 추천 프로그램 띄움-------------------
-recommend_program.style.display = "none";
-recommend_program_btn.addEventListener("click", () => {
-  recommend_program.style.display = "block";
-});
 
 // 회원 인적사항 제출
 complete.addEventListener("click", async () => {
