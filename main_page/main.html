@@ -7,6 +7,85 @@
     <!-- <link rel="stylesheet" href="/recommend_program/recommend_program.css" /> -->
     <link rel="stylesheet" href="/main_page/main_page.css" />
   </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    #main_container {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    /* 인기 순위 높은 운동 프로그램 컨테이너*/
+    #main_top_rank_workout_program_container {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .content_wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+    }
+    .title {
+      display: flex;
+      height: 80px;
+      align-items: center;
+    }
+
+    .main_content {
+      display: flex;
+      justify-content: space-between;
+    }
+    .box {
+      border: 1px solid black;
+      border-radius: 10px;
+      height: 250px;
+      width: 250px;
+    }
+    /* 난이도별 대표 운동 프로그램 컨테이너 */
+    #main_represent_workout_program_container {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    #main_introduction_coach_container {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    #main_introduction_coach_container
+      > .content_wrapper
+      > #coach_text
+      > p:nth-of-type(n) {
+      font-size: 6rem;
+    }
+    #coach_middle_text {
+      margin-top: 15px;
+      font-size: 1rem;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    #coach_text {
+      display: flex;
+      height: 80px;
+      align-items: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    #coach_content {
+      display: flex;
+    }
+    #coach_content div {
+      flex: 1;
+    }
+  </style>
   <body>
     <script src="auth.js"></script>
     <!-- 메인 페이지 -->
@@ -35,6 +114,51 @@
         </ul>
       </div>
     </div>
+
+    <main>
+      <div id="main_container">
+        <div id="main_top_rank_workout_program_container">
+          <div class="content_wrapper">
+            <div class="title"><p>BEST 운동 프로그램</p></div>
+            <div class="main_content">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </div>
+          </div>
+        </div>
+        <div id="main_represent_workout_program_container">
+          <div class="content_wrapper">
+            <div class="title"><p>난이도별 대표운동</p></div>
+            <div class="main_content">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </div>
+          </div>
+        </div>
+        <div id="main_introduction_coach_container">
+          <div class="content_wrapper">
+            <div id="coach_text">
+              <p class="coach">CO</p>
+              <div id="coach_middle_text">
+                뛰어난 전문가들과 <br />함께하는 코칭
+              </div>
+              <p class="coach">ACH</p>
+            </div>
+            <div id="coach_content">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
   <script src="main.js"></script>
 </html>
