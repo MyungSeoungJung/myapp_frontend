@@ -130,10 +130,10 @@ Goal.forEach((item) => {
   }); //다이어트 item foreach문
 }); // 다이어트 목적 클릭이벤트
 
-// -------------버튼 클릭하면 추천 프로그램 화면에 보이게 함-------------------
-
+// 회원가입 제출 버튼 안 보이게 = 운동 추천 받기 버튼 클릭하면 보이게
+complete.style.display = "none";
+// -------------운동 추천 받기 클릭시 추천 프로그램 띄움-------------------
 recommend_program.style.display = "none";
-// 서버에서 추천 운동 프로그램 GET
 recommend_program_btn.addEventListener("click", async () => {
   recommend_program.style.display = "block";
 
@@ -158,6 +158,8 @@ recommend_program_btn.addEventListener("click", async () => {
     );
     count++;
   }
+  complete.style.display = "block";
+  recommend_program_btn = "hidden";
 });
 
 // 추천 운동프로그램 선택

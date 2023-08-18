@@ -13,149 +13,204 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     main {
       display: flex;
       flex-direction: column;
-    }
-    header {
-      flex: 0.3;
-    }
-    footer {
-      flex: 0.2;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
     }
     #main-container {
       width: 350px;
-      flex: 0.7;
     }
-    input {
+    header {
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+    footer {
+      display: flex;
+      flex-direction: column;
       width: 100%;
-      height: 40px;
+      justify-content: center;
+      position: relative;
+      height: 100px;
     }
     form {
       display: flex;
       flex-direction: row;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
     }
-    .sex {
-      display: flex;
-      flex-direction: column;
+    /* 헤더 타이틀 / 회원가입 텍스트 */
+    header h1 {
+      font-size: 2rem;
     }
-    form div:nth-of-type(n) {
+    header h2 {
+      font-size: 1.5rem;
+    }
+    /* 이름/비밀번호/나이등 입력 폼 */
+    input {
       width: 100%;
-      height: 30px;
-      border: 1px solid blue;
-      border-radius: 10px;
-      transition: all 0.2s ease; /* 변경 시 부드러운 애니메이션 적용 */
-    }
-    form div:hover {
-      background-color: blue;
-      transform: scale(1.2);
-    }
-    form div.clicked {
-      background-color: blue;
-      transform: scale(1.2); /* 10% 더 커지도록 설정 */
+      height: 40px;
     }
     .name {
       display: flex;
       flex-direction: column;
     }
+
+    /* 성별 / 운동 목적 div ---------------*/
+    .sex {
+      display: flex;
+      flex-direction: column;
+    }
+    .sex > div:first-child {
+      margin-bottom: 10px;
+    }
+    form div:nth-of-type(n) {
+      width: 100%;
+      height: 40px;
+      border-radius: 5px;
+      background-color: rgb(250, 250, 250);
+      transition: all 0.2s ease;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: start;
+      padding-left: 10px;
+      padding-top: 10px;
+    }
+    form div:hover {
+      background-color: #0d0c22;
+      color: white;
+      transform: scale(1.1);
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    form div.clicked {
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
+      transform: scale(1.1); /* 10% 더 커지도록 설정 */
+    }
+    /* 운동 목적------------------ */
+    .Goal {
+      display: flex;
+      flex-direction: column;
+    }
+    .Goal > div:first-child {
+      margin-bottom: 10px;
+    }
+    .Goal div > select {
+      margin-top: 15px;
+      border-radius: 5px;
+      background-color: rgb(40, 40, 40);
+      color: white;
+      width: 100%;
+    }
+    .Goal div > select option {
+      color: white;
+    }
+
+    /* 활동수준/운동경력 ----------------------*/
     .dropdown {
       display: flex;
       flex-direction: column;
       width: 100%;
     }
-    footer {
-      display: flex;
-      flex-direction: column;
-      width: 200px;
-      height: 200px;
-      justify-content: space-between;
-    }
-
     select {
       width: 100%;
+      height: 40px;
     }
-    input {
+    /* 입력버튼----------------------*/
+    #recommend_program_button,
+    #complete {
       width: 100%;
+      height: 40px;
+      position: absolute;
     }
   </style>
   <body>
     <main>
-      <header>
-        <h1>MyCoach</h1>
-        <h2>회원가입</h2>
-      </header>
       <div id="main-container">
-        <form class="name">
-          <input placeholder="이름을 입력해주세요" />
-          <input placeholder="사용하실 비밀번호를 입력해주세요" />
-          <input placeholder="나이를 입력해주세요" />
-          <input placeholder="전화번호를 입력해주세요" />
-          <input placeholder="키를 입력해주세요" />
-          <input placeholder="몸무게를 입력해주세요" />
-        </form>
+        <header>
+          <h1>MyCoach</h1>
+          <h2>회원가입</h2>
+        </header>
+        <div id="input-box">
+          <div>
+            <form class="name">
+              <input placeholder="이름을 입력해주세요" />
+              <input placeholder="사용하실 비밀번호를 입력해주세요" />
+              <input placeholder="나이를 입력해주세요" />
+              <input placeholder="전화번호를 입력해주세요" />
+              <input placeholder="키를 입력해주세요" />
+              <input placeholder="몸무게를 입력해주세요" />
+            </form>
+          </div>
 
-        <!-- 드롭다운 선택 -->
-        <div class="dropdown">
-          <!-- 활동량 선택 -->
-          <form class="activity">
-            <select>
-              <option>회원님의 일상적인 활동 수준을 선택해주세요.</option>
-              <option value="1.2">매우 약한 활동, 거의 움직이지않음</option>
-              <option value="1.375 ">
-                가벼운 운동, 주로 앉아서 일하는 경우
-              </option>
-              <option value="1.55">보통의 활동 수준, 일반적인 사람들</option>
-              <option value="1.725">활발한 운동, 많은 활동을 하는 경우</option>
-              <option value="1.9">매우 강도 높은 운동을 하는 경우</option>
-            </select>
+          <!-- 드롭다운 선택 -->
+          <div class="dropdown">
+            <!-- 활동량 선택 -->
+            <form class="activity">
+              <select>
+                <option>회원님의 일상적인 활동 수준을 선택해주세요.</option>
+                <option value="1.2">매우 약한 활동, 거의 움직이지않음</option>
+                <option value="1.375 ">
+                  가벼운 운동, 주로 앉아서 일하는 경우
+                </option>
+                <option value="1.55">보통의 활동 수준, 일반적인 사람들</option>
+                <option value="1.725">
+                  활발한 운동, 많은 활동을 하는 경우
+                </option>
+                <option value="1.9">매우 강도 높은 운동을 하는 경우</option>
+              </select>
+            </form>
+            <!-- 난이도 선택 -->
+            <form class="level">
+              <select>
+                <option>자신의 운동경력을 선택해주세요.</option>
+                <option value="입문">
+                  입문 수준 [운동을 시작한 경험이 전혀 없음]
+                </option>
+                <option value="초중급">
+                  초중급 수준 [운동 경력이 6개월 미만]
+                </option>
+                <option value="중급">중급 수준 [운동 경력이 1년~2년]</option>
+                <option value="고급">고급 수준 [운동 경력이 3년~이상]</option>
+              </select>
+            </form>
+          </div>
+          <!-- 남성 여성 -->
+          <form class="sex">
+            <div>남성</div>
+            <div>여성</div>
           </form>
-          <!-- 난이도 선택 -->
-          <form class="level">
-            <select>
-              <option>자신의 운동경력을 선택해주세요.</option>
-              <option value="입문">
-                입문 수준 [운동을 시작한 경험이 전혀 없음]
-              </option>
-              <option value="초중급">
-                초중급 수준 [운동 경력이 6개월 미만]
-              </option>
-              <option value="중급">중급 수준 [운동 경력이 1년~2년]</option>
-              <option value="고급">고급 수준 [운동 경력이 3년~이상]</option>
-            </select>
+
+          <!-- 다이어트 목적 -->
+          <form class="Goal">
+            <div>
+              다이어트
+              <select id="diet">
+                <option>주에 감량하실 체중을 선택해주세요</option>
+                <option value="275">주 0.25kg 감량</option>
+                <option value="550">주 0.5kg 감량</option>
+                <option value="1095">주 1kg 감량</option>
+              </select>
+            </div>
+            <div>
+              근력운동
+              <select id="bulk">
+                <option>주에 증량하실 체중을 선택해주세요</option>
+                <option value="250">주 0.25kg 증량</option>
+                <option value="500">주 0.5kg 증량</option>
+              </select>
+            </div>
           </form>
         </div>
-        <!-- 남성 여성 -->
-        <form class="sex">
-          <div>남성</div>
-          <div>여성</div>
-        </form>
-
-        <!-- 다이어트 목적 -->
-        <form class="Goal">
-          <div>
-            1.다이어트
-            <select id="diet">
-              <option>주에 감량하실 체중을 선택해주세요</option>
-              <option value="275">주 0.25kg 감량</option>
-              <option value="550">주 0.5kg 감량</option>
-              <option value="1095">주 1kg 감량</option>
-            </select>
-          </div>
-          <div>
-            3.근력운동
-            <select id="bulk">
-              <option>주에 증량하실 체중을 선택해주세요</option>
-              <option value="250">주 0.25kg 증량</option>
-              <option value="500">주 0.5kg 증량</option>
-            </select>
-          </div>
-        </form>
+        <footer>
+          <button id="recommend_program_button">운동 추천 받기</button>
+          <button id="complete">회원가입</button>
+        </footer>
       </div>
-      <footer>
-        <button id="recommend_program_button">운동 추천 받기</button>
-        <button id="complete">회원가입</button>
-      </footer>
     </main>
 
     <!-- program 선택창-->
