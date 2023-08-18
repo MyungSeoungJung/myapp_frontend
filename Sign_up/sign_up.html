@@ -80,7 +80,7 @@
       padding-left: 10px;
       padding-top: 10px;
     }
-    form div:hover {
+    form > div:hover {
       background-color: #0d0c22;
       color: white;
       transform: scale(1.1);
@@ -89,12 +89,13 @@
     form div.clicked {
       background-color: rgba(0, 0, 0, 0.85);
       color: white;
-      transform: scale(1.1); /* 10% 더 커지도록 설정 */
+      transform: scale(1.1);
     }
     /* 운동 목적------------------ */
     .Goal {
       display: flex;
       flex-direction: column;
+      height: 200px;
     }
     .Goal > div:first-child {
       margin-bottom: 10px;
@@ -126,6 +127,11 @@
       width: 100%;
       height: 40px;
       position: absolute;
+      background-color: rgb(40, 40, 40);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      border: none;
+      border-radius: 7px;
+      color: white;
     }
   </style>
   <body>

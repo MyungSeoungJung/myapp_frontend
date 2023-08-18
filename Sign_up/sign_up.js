@@ -14,7 +14,6 @@ const program_wrapper = document.querySelector(".program_wrapper");
 const recommend_program_btn = document.querySelector(
   "#recommend_program_button"
 );
-
 // 프로그램 element create
 function creatProgram(
   id,
@@ -106,6 +105,7 @@ Goal.forEach((item) => {
       dietDropBox.addEventListener("change", () => {
         GoalCal = dietDropBox.value;
       });
+
       dietDropBox.addEventListener("mouseleave", () => {
         dietDropBox.style.display = "none";
       });
@@ -117,9 +117,10 @@ Goal.forEach((item) => {
       });
       bulkDropBox.addEventListener("mouseleave", () => {
         bulkDropBox.style.display = "none";
-        GoalCal = bulkDropBox.value;
+        // GoalCal = bulkDropBox.value;
       });
     }
+
     if (clickedsex != null && clickedsex !== item) {
       clickedsex.classList.remove("clicked");
     }
@@ -176,9 +177,8 @@ recommend_program_content.addEventListener("click", (e) => {
     complete_alert.classList = "complete_alert";
     complete_alert.innerHTML = `
         <p>축하합니다! </p>
-        <p>선택하신 운동 프로그램은 <strong>${title}</strong>입니다.</p>
-        <p>사용자 정보 갱신을 위해 다시 로그인해주세요</p>
-       <div> <button id ='complete_alert_button'> 로그인 페이지로 이동 </button> </div>`;
+        <p>선택하신 운동 프로그램은</p> <p>${title}</p> <p>입니다.</p>
+       <div> <button id ='complete_alert_button'> 확인 </button> </div>`;
     const complete_alert_button = document.querySelector(
       "#complete_alert_button"
     );
