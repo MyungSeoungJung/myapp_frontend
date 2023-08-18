@@ -11,7 +11,7 @@
   }
   a:visited {
     text-decoration: none;
-    color: inherit; /* 링크의 기본 색상을 상속받음 */
+    color: inherit; 
   }
   /* ---------------------------헤더 네비------------------- */
   header {

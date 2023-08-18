@@ -36,7 +36,7 @@
   aside:nth-of-type(2) {
     flex: 0.6;
   }
-
+/* 비디오 */
   #fullscreen-video {
     position: absolute;
     top: 0;
@@ -46,6 +46,11 @@
     object-fit: cover;
     transform: translateX(-40%);
 
+  }
+  @media (max-height: 500px) { 
+    #fullscreen-video {
+      display: none; /* 비디오 숨기기 */
+    }
   }
 
   /* 메인 영역 */
@@ -68,7 +73,9 @@
     align-items: center;
     justify-content: center;
   }
-
+  #content {
+    margin-top: 50px;
+  }
   /*  글씨 영역 */
   section>div:first-of-type {
     display: flex;
@@ -153,17 +160,19 @@
     font-size: 0.9rem;
     text-align: right;
   }
+
+
 </style>
 
 <body>
   <div id="main_container">
-    <aside>
+    <aside id="video-aside">
       <video id="fullscreen-video" autoplay loop muted>
-        <source src="/img/video/pexels-tima-miroshnichenko-6390166 (2160p).mp4" type="video/mp4">
+        <source src="/img/video/pexels-tima-miroshnichenko-6390166 (1080p).mp4" type="video/mp4">
     </aside>
     <main>
       <section></section>
-      <section>
+      <section id="content">
         <div>
           <div>An indispensable platform</div>
           <div>For fitness enthusiasts.</div>
