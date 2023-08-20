@@ -1,98 +1,328 @@
    /* 전체 */
-*{
-  box-sizing: border-box;
-}
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  a {
-    text-decoration: none;
-  }
-  a:visited {
-    text-decoration: none;
-    color: inherit; 
-  }
-  /* ---------------------------헤더 네비------------------- */
-  header {
-    width: 100vw;
-    height: 100px;
-    display: flex;
-    justify-content: ce;
-  }
-  .header-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 20px;
-  }
+   * {
+     box-sizing: border-box;
+     font-size: 14px;
+   }
 
-  #header-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  header h1 {
-    margin-left: 110px;
-  }
-  header #logout {
-    margin-left: 20px;
-  }
-  
-  /* ---------------------------banner------ul---------------- */
-  #banner {
-    width: 100vw;
-    background-color: rgb(184, 184, 184);
-    height: 500px;
-    display: flex;
-    justify-content: center;
-  }
+   body {
+     margin: 0;
+     padding: 0;
+   }
 
-  div ul {
-    width: 1300px;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 70px;
-    margin-right: 50px;
-  }
-  ul li {
-    display: flex;
-    width: 150px;
-    height: 60px;
-    background-color: rgba(0, 0, 0, 0.68);
-    border-radius: 30px;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    transition: background-color 0.25s ease-in, color 0.25s ease-in;
-  }
-  li:hover {
-    transition: background-color 0.15s, color 0.15s;
-    background-color: rgb(250, 250, 250);
-    color: black;
-  }
-  #logout {
-    background-color:  #0d0c22;
-    border: none;
-    color: white;
-    width: 100px;
-    height: 50px;
-    text-align: center;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-    display: flex; 
-    flex-direction: column;
-  }
-  #logout:hover{
-    opacity: 0.7;
-  }
-  #logout span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
+   a {
+     text-decoration: none;
+   }
+
+   a:visited {
+     text-decoration: none;
+     color: inherit;
+   }
+
+   /* ---------------------------헤더 네비------------------- */
+   header {
+     width: 100vw;
+     height: 100px;
+     display: flex;
+     justify-content: ce;
+   }
+
+   .header-wrapper {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     width: 100%;
+     padding: 0 20px;
+   }
+
+   #header-right {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+
+   header h1 {
+     margin-left: 110px;
+   }
+
+   header #logout {
+     margin-left: 20px;
+   }
+
+   /* ---------------------------banner------ul---------------- */
+   #banner {
+     width: 100vw;
+     height: 500px;
+     display: flex;
+     justify-content: center;
+   }
+
+   div ul {
+     position: absolute;
+     z-index: 1;
+     width: 1300px;
+     list-style-type: none;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     margin-top: 70px;
+     margin-right: 50px;
+   }
+
+   #fullscreen-video {
+     position: relative;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     z-index: -1;
+   }
+
+   ul li {
+     display: flex;
+     width: 150px;
+     height: 60px;
+     background-color: rgba(0, 0, 0, 0.68);
+     border-radius: 30px;
+     align-items: center;
+     justify-content: center;
+     color: white;
+     transition: background-color 0.25s ease-in, color 0.25s ease-in;
+   }
+
+   li:hover {
+     transition: background-color 0.15s, color 0.15s;
+     background-color: rgb(250, 250, 250);
+     color: black;
+   }
+
+   #logout {
+     background-color: #0d0c22;
+     border: none;
+     color: white;
+     width: 100px;
+     height: 50px;
+     text-align: center;
+     border-radius: 10px;
+     align-items: center;
+     justify-content: center;
+     display: flex;
+     flex-direction: column;
+   }
+
+   #logout:hover {
+     opacity: 0.7;
+   }
+
+   #logout span {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+   }
+
+
+   /* 코치 소개  부분 ------------------------------------------------------------------------------------------------------------------------------------*/
+
+   #main_container {
+     margin-top: 50px;
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+   }
+
+   footer {
+     background-color: red;
+     width: 100vw;
+     height: 300px;
+     margin-top: 250px;
+   }
+
+   /* 인기 순위 높은 운동 프로그램 컨테이너*/
+   #main_top_rank_workout_program_container {
+     flex: 1;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+   }
+
+   .content_wrapper {
+     display: flex;
+     flex-direction: column;
+     width: 80%;
+   }
+
+   .title {
+     display: flex;
+     height: 80px;
+     align-items: center;
+   }
+
+   .main_content {
+     display: flex;
+     justify-content: space-between;
+   }
+
+   /* 난이도별 대표 운동 프로그램 컨테이너 */
+   #main_represent_workout_program_container {
+     flex: 1;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+   }
+
+   /* 코치 소개 컨테이너  */
+   #main_introduction_coach_container {
+     flex: 1;
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+   }
+
+   #coach_text_wrapper {
+     display: flex;
+     flex-direction: column;
+   }
+
+   #coach_text>p:nth-of-type(n) {
+     font-size: 6rem;
+   }
+
+   #more_details {
+     font-size: 1.1rem;
+     margin-top: 25px;
+     margin-bottom: 100px;
+     margin-left: 5px;
+   }
+
+   #coach_middle_text {
+     margin-top: 15px;
+     font-size: 1rem;
+     margin-left: 20px;
+     margin-right: 20px;
+   }
+
+   #coach_text {
+     display: flex;
+     height: 80px;
+     align-items: center;
+     margin-top: 100px;
+   }
+
+
+   #coach_content div {
+     flex: 1;
+   }
+
+   .box {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 250px;
+     flex: 1;
+   }
+
+   /* 코치 소개 첫째줄 글자 */
+   .coach_content1 .box div {
+     width: 150px;
+     text-align: center;
+     color: white;
+   }
+
+   /* 코치 소개 버튼 */
+   .coach_content1 .box div button {
+     border-radius: 5px;
+     margin-top: 20px;
+     height: 30px;
+     width: 100%;
+     border: none;
+     font-size: 0.8rem;
+   }
+
+   /* 코치 소개 버튼 후버 */
+
+   .coach_content1 .box div button:hover {
+     box-shadow: 0 0 20px rgba(255, 155, 247, 0.8);
+   }
+
+   /* 코치 소개 둘째줄  글자 */
+   .coach_content2 .box div {
+     width: 150px;
+     text-align: center;
+   }
+
+   /* 이모티콘 */
+   .bi-arrow-right-square-fill {
+     font-size: 1.5rem;
+   }
+
+   .coach-image {
+     max-width: 100%;
+     max-height: 100%;
+     width: auto;
+     height: auto;
+   }
+
+   .coach_content1 {
+     display: flex;
+     width: 100%;
+   }
+
+   .coach_content2 {
+     display: flex;
+     width: 100%;
+   }
+
+   .coach_content3 {
+     display: flex;
+     width: 100%;
+   }
+
+   /* 코치들 사진 */
+   .coach_content1>.box:nth-child(1) {
+     background-image: url("/img/coach/Bryce Lewis.jpg");
+     background-size: cover;
+     background-position: center;
+   }
+
+   .coach_content1>.box:nth-child(3) {
+     background-color: black;
+   }
+
+   .coach_content1>.box:nth-child(4) {
+     background-image: url("/img/coach/chrisbumstead.jpg");
+     background-size: cover;
+     background-position: center;
+   }
+
+
+   .coach_content2>.box:nth-child(2) {
+     background-image: url("/img/coach/Rebecca\ Rouse.jpg");
+     background-size: cover;
+     background-position: center;
+   }
+
+   .coach_content2>.box:nth-child(3) {
+     background-image: url("/img/coach/Geoffrey\ Verity.jpeg");
+     background-size: cover;
+     background-position: center;
+   }
+
+   .coach_content2>.box:nth-child(5) {
+     background-image: url("/img/coach/Alec\ Chen.jpg");
+     background-size: cover;
+     background-position: center;
+   }
+
+   .coach_content3>.box:nth-child(1) {
+     background-image: url("/img/coach/Brandon\ Campbell.jpg");
+     background-size: cover;
+     background-position: center;
+   }
+
+   .coach_content3>.box:nth-child(4) {
+     background-image: url("/img/coach/Mark\ Rosenberg.jpg");
+     background-size: cover;
+     background-position: center;
+   }

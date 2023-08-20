@@ -16,6 +16,7 @@
 
   a {
     text-decoration: none;
+    color: black;
   }
 
   a:visited {
@@ -36,7 +37,8 @@
   aside:last-of-type {
     flex: 0.6;
   }
-/* 비디오 */
+
+  /* 비디오 */
   #fullscreen-video {
     position: absolute;
     top: 0;
@@ -47,9 +49,10 @@
     transform: translateX(-40%);
 
   }
-  @media (max-height: 500px) { 
+
+  @media (max-height: 500px) {
     #fullscreen-video {
-      display: none; 
+      display: none;
     }
   }
 
@@ -73,9 +76,11 @@
     align-items: center;
     justify-content: center;
   }
+
   #content {
     margin-top: 50px;
   }
+
   /*  글씨 영역 */
   section>div:first-of-type {
     display: flex;
@@ -140,10 +145,12 @@
     color: white;
     margin-bottom: 5px;
   }
-  button:hover{
+
+  button:hover {
     background-color: #0D0c22;
     opacity: 0.8;
   }
+
   strong {
     font-size: 1.1rem;
   }
@@ -163,15 +170,13 @@
     font-size: 0.9rem;
     text-align: right;
   }
-
-
 </style>
 
 <body>
   <div id="main_container">
     <aside id="video-aside">
       <video id="fullscreen-video" autoplay loop muted>
-        <source src="/img/video/pexels-tima-miroshnichenko-6390166 (1080p).mp4" type="video/mp4">
+        <source src="/img/video/login.mp4" type="video/mp4">
     </aside>
     <main>
       <section></section>

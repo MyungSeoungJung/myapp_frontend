@@ -1,146 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>메인페이지</title>
-    <!-- <link rel="stylesheet" href="/recommend_program/recommend_program.css" /> -->
-    <link rel="stylesheet" href="/main_page/main_page.css" />
-  </head>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-size: 14px;
-    }
-    #main_container {
-      margin-top: 50px;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-    /* 인기 순위 높은 운동 프로그램 컨테이너*/
-    #main_top_rank_workout_program_container {
-      flex: 1;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-    }
-    .content_wrapper {
-      display: flex;
-      flex-direction: column;
-      width: 80%;
-    }
-    .title {
-      display: flex;
-      height: 80px;
-      align-items: center;
-    }
 
-    .main_content {
-      display: flex;
-      justify-content: space-between;
-    }
-    .box {
-      border: 1px solid black;
-      border-radius: 10px;
-      height: 250px;
-      width: 250px;
-    }
-    /* 난이도별 대표 운동 프로그램 컨테이너 */
-    #main_represent_workout_program_container {
-      flex: 1;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-    }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>메인페이지</title>
+  <!-- <link rel="stylesheet" href="/recommend_program/recommend_program.css" /> -->
+  <link rel="stylesheet" href="/main_page/main_page.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+</style>
 
-    #main_introduction_coach_container {
-      flex: 1;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-    }
-    #main_introduction_coach_container
-      > .content_wrapper
-      > #coach_text
-      > p:nth-of-type(n) {
-      font-size: 6rem;
-    }
-    #coach_middle_text {
-      margin-top: 15px;
-      font-size: 1rem;
-      margin-left: 20px;
-      margin-right: 20px;
-    }
-    #coach_text {
-      display: flex;
-      height: 80px;
-      align-items: center;
-      margin-top: 50px;
-      margin-bottom: 50px;
-    }
-    #coach_content {
-      display: flex;
-    }
-    #coach_content div {
-      flex: 1;
-    }
-  </style>
-  <body>
-    <script src="auth.js"></script>
-    <!-- 메인 페이지 -->
-    <div id="mainpage">
-      <header>
-        <div class="header-wrapper">
-          <div>
-            <!-- 타이틀 가운데 넣기위한 div태그 -->
-          </div>
-          <div>
-            <h1>MyCoach</h1>
-          </div>
-          <div id="header-right">
-            <div id="username"></div>
-            <div id="logout">LOGOUT</div>
-          </div>
+<body>
+  <script src="auth.js"></script>
+  <!-- 메인 페이지 -->
+  <div id="mainpage">
+    <header>
+      <div class="header-wrapper">
+        <div>
+          <!-- 타이틀 가운데 넣기위한 div태그 -->
         </div>
-      </header>
-      <div id="banner">
-        <ul>
-          <a href="/nutrition_plan/nutrition_plan.html"><li>영양 계획</li></a>
-          <li>나의 운동</li>
-          <li>운동 프로그램</li>
-          <li>커뮤니티</li>
-          <li>코치 소개</li>
-        </ul>
+        <div>
+          <h1>MyCoach</h1>
+        </div>
+        <div id="header-right">
+          <div id="username"></div>
+          <div id="logout">LOGOUT</div>
+        </div>
       </div>
+    </header>
+    <div id="banner">
+      <video id="fullscreen-video" autoplay loop muted>
+        <source src="/img/video/login.mp4" type="video/mp4">
+      </video>
+      <ul>
+        <a href="/nutrition_plan/nutrition_plan.html">
+          <li>영양 계획</li>
+        </a>
+        <a href="/my_exercise/my_exercise.html">
+          <li>나의 운동</li>
+        </a>
+        <a href="/exercise_program/exercise_program.html">
+          <li>운동 프로그램</li>
+        </a>
+        <a href="/community/community.html">
+          <li>커뮤니티</li>
+        </a>
+        <a href="/introduction _coaches/introduction _coaches.html">
+          <li>코치 소개</li>
+        </a>
+      </ul>
     </div>
+  </div>
 
-    <main>
-      <div id="main_container">
-        <div id="main_top_rank_workout_program_container">
-          <div class="content_wrapper">
-            <div class="title"><p>BEST 운동 프로그램</p></div>
-            <div class="main_content">
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
-            </div>
+  <main>
+    <div id="main_container">
+      <div id="main_top_rank_workout_program_container">
+        <div class="content_wrapper">
+          <div class="title">
+            <p>BEST 운동 프로그램</p>
+          </div>
+          <div class="main_content">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
           </div>
         </div>
-        <div id="main_represent_workout_program_container">
-          <div class="content_wrapper">
-            <div class="title"><p>난이도별 대표운동</p></div>
-            <div class="main_content">
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
-            </div>
+      </div>
+      <div id="main_represent_workout_program_container">
+        <div class="content_wrapper">
+          <div class="title">
+            <p>난이도별 대표운동</p>
+          </div>
+          <div class="main_content">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
           </div>
         </div>
-        <div id="main_introduction_coach_container">
-          <div class="content_wrapper">
+      </div>
+      <div id="main_introduction_coach_container">
+        <div class="content_wrapper">
+          <div id="coach_text_wrapper">
             <div id="coach_text">
               <p class="coach">CO</p>
               <div id="coach_middle_text">
@@ -148,17 +96,41 @@
               </div>
               <p class="coach">ACH</p>
             </div>
-            <div id="coach_content">
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
+            <div id="more_details">더보기 <i class="bi bi-arrow-right-square-fill"></i></div>
+          </div>
+          <div class="coach_content1">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box">
+              <div>"지금 시작하지 않으면 언제 시작하겠어요?" <button>View exercise programs</button></div>
             </div>
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+          <div class="coach_content2">
+            <div class="box">
+              <div>"당신의 몸은 강하게, 마음은 더 강하게 만들어갈 수 있습니다."</div>
+            </div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+          <div class="coach_content3">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
           </div>
         </div>
       </div>
-    </main>
-  </body>
-  <script src="main.js"></script>
+    </div>
+
+  </main>
+  <footer>sdf</footer>
+
+</body>
+<script src="main.js"></script>
+
 </html>

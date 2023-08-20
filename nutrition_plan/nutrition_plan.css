@@ -1,0 +1,140 @@
+* {
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 auto;
+}
+
+/* -------------------------top_banner----------------------- */
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+#top_banner {
+    width: 100vw;
+    background-color: rgb(170, 170, 170);
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+#top_banner #top_banner_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+/* --------------------nav---------------------------- */
+#nav_contain {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    height: 80px;
+    color: white;
+    width: 97.5vw;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+#nav_item {
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 100px;
+}
+
+nav h1 {
+    margin-left: 30px;
+}
+
+/* 먹어야 될 칼로리 글자  */
+section {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* -----------------매크로 띄우는 곳---------------------------- */
+main {
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+main .graph_contain {
+    background-color: rgb(184, 184, 184);
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+}
+
+.graph_contain p:nth-of-type(1) {
+    flex: 1;
+}
+
+.macro {
+    flex: 1;
+}
+
+.graph_contain div:last-child {
+    flex: 1;
+}
+
+/* 애니메이션 */
+.progressbar {
+    width: 80%;
+    height: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ccc;
+    position: relative;
+}
+
+.progressbar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 0;
+    background: rgb(9, 218, 44);
+    animation: progress 1s ease forwards;
+}
+
+@keyframes progress {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
