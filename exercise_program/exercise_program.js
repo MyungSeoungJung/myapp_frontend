@@ -1,5 +1,5 @@
 function creatLi(
-  no,
+  id,
   img,
   programTitle,
   programIntro,
@@ -10,7 +10,7 @@ function creatLi(
   li.dataset.goal = programGoal;
   li.innerHTML = `
   <div>
-  <div id="top" data-no="${no}">
+  <div id="top" data-no="${id}">
   <div><img width="auto" height="30" src="${img}"></div>
   </div>
   <div id = "bottom">
@@ -53,7 +53,7 @@ async function getPagedList(page, query) {
   for (let item of result.content) {
     ul.append(
       creatLi(
-        item.no,
+        item.id,
         item.img,
         item.programTitle,
         item.programIntro,
