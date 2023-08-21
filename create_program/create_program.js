@@ -1,4 +1,11 @@
-function creatLi(programLevel, programGoal, img, programIntro, programTitle) {
+function creatLi(
+  programLevel,
+  programGoal,
+  img,
+  programIntro,
+  programTitle,
+  coachName
+) {
   const li = document.createElement("li");
   li.dataset.goal = programGoal;
   li.innerHTML = `
@@ -12,6 +19,7 @@ function creatLi(programLevel, programGoal, img, programIntro, programTitle) {
   <div>이미지 : <img width="auto" height="30" src="${img}"></div>
   <hr />
   <p>소개글: ${programIntro}</p>
+  <p>코치이름: ${coachName}</p>
   </div>
   `;
   return li;
@@ -28,7 +36,7 @@ const title = document.querySelector("#input  > input");
 const content = document.querySelector("#input > textarea");
 const file = document.querySelector("#file");
 const btn = document.querySelector("button");
-
+const coach_name = document.querySelector("#coach_name");
 let level = "";
 levels.forEach((item) => {
   item.addEventListener("change", (e) => {
@@ -66,6 +74,7 @@ btn.addEventListener("click", async (e) => {
         programTitle: title.value,
         programIntro: content.value,
         img: image,
+        coachName: coach_name.value,
       }),
     });
     // 여기까진 잘 들어감
@@ -80,7 +89,8 @@ btn.addEventListener("click", async (e) => {
         data.programGoal,
         data.img,
         data.programIntro,
-        data.programTitle
+        data.programTitle,
+        data.coachName
       )
     );
   }); // 파일리드 리스너
@@ -103,7 +113,8 @@ btn.addEventListener("click", async (e) => {
         item.programGoal,
         item.img,
         item.programIntro,
-        item.programTitle
+        item.programTitle,
+        item.coachName
       )
     );
   }
