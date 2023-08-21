@@ -1,240 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
+  </head>
+  <style>
     * {
-        font-size: 14px;
+      font-size: 14px;
     }
 
     body {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0 auto;
-
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0 auto;
     }
 
     /* -------------------------top_banner----------------------- */
     a {
-        color: white;
-        text-decoration: none;
+      color: white;
+      text-decoration: none;
     }
 
-
     a:visited {
-        text-decoration: none;
-        color: inherit;
+      text-decoration: none;
+      color: inherit;
     }
 
     #top_banner {
-        width: 100%;
-        background-color: rgb(170, 170, 170);
-        height: 500px;
-        display: flex;
-        flex-direction: column;
+      width: 100%;
+      background-color: rgb(170, 170, 170);
+      height: 500px;
+      display: flex;
+      flex-direction: column;
     }
 
     #top_banner #top_banner_text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 200px;
     }
-
 
     /* 네비게이션 ------------------------------------------------*/
     #nav_contain {
-        display: flex;
-        justify-content: center;
+      display: flex;
+      justify-content: center;
     }
 
     nav {
-        display: flex;
-        flex-direction: row;
-        background-color: black;
-        height: 80px;
-        color: white;
-        width: 97.5vw;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 25px;
+      display: flex;
+      flex-direction: row;
+      background-color: black;
+      height: 80px;
+      color: white;
+      width: 97.5vw;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 25px;
     }
 
     #nav_item {
-        display: flex;
-        width: 700px;
-        justify-content: space-between;
-        align-items: center;
-        margin-right: 100px;
+      display: flex;
+      width: 700px;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 100px;
     }
 
     nav h1 {
-        margin-left: 30px;
+      margin-left: 30px;
     }
 
     /* 메인 영역 ------------------------ */
     #main_container {
-        width: 100vw;
-        height: 500px;
-        display: flex;
-        justify-content: center;
-        margin-top: 100px;
-        margin-bottom: 200px;
+      width: 100vw;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      /* flex-direction: column; */
+      margin-top: 100px;
+      margin-bottom: 200px;
     }
 
     #main_wrapper {
-        width: 55%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+      width: 55%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     #top {
-        flex: 0.6;
-        display: flex;
+      flex: 0.6;
+      display: flex;
     }
 
-
-
     #bottom {
-        margin-top: 30px;
-        flex: 0.4;
-        display: flex;
-        flex-direction: row;
+      margin-top: 30px;
+      flex: 0.4;
+      display: flex;
+      flex-direction: row;
     }
 
     #left {
-        display: flex;
-        flex-direction: column;
-        flex: 0.6;
+      display: flex;
+      flex-direction: column;
+      flex: 0.6;
     }
 
-    #top>div:nth-of-type(2) {
-        flex: 0.5;
+    #top > div:nth-of-type(2) {
+      flex: 0.5;
     }
 
     #img {
-        flex: 0.5;
+      flex: 0.5;
     }
 
     #img img {
-        border-radius: 30px;
-        width: 100%;
-        height: 100%;
+      border-radius: 30px;
+      width: 100%;
+      height: 100%;
     }
 
     #program_title {
-        flex: 1;
-        font-size: 2.1rem;
+      flex: 1;
+      font-size: 2.1rem;
     }
 
     #program_intro {
-        flex: 1;
-        font-size: 1.4rem;
-
+      flex: 1;
+      font-size: 1.4rem;
     }
 
     #right {
-        flex: 0.3;
-        flex-direction: column;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      flex: 0.3;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     #right table {
-        border-radius: 10px;
-        border: none;
-        box-shadow: 0 0 10px rgba(187, 187, 187, 0.8);
-        width: 100%;
-        height: 90%;
-        padding-left: 20px;
-        padding-bottom: 10px;
-        padding-top: 10px;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 0 10px rgba(187, 187, 187, 0.8);
+      width: 100%;
+      height: 90%;
+      padding-left: 20px;
+      padding-bottom: 10px;
+      padding-top: 10px;
 
-        margin-bottom: 20px;
+      margin-bottom: 20px;
     }
 
     #right table td:nth-of-type(2) {
-        padding-right: 30px;
+      padding-right: 30px;
     }
-</style>
+    #my_exercise_title {
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+  </style>
 
-<body>
+  <body>
     <div id="top_banner">
-        <div id="nav_contain">
-            <nav id="nav">
-                <div>
-                    <a href="/main_page/main.html">
-                        <h1>My Coach</h1>
-                    </a>
-                </div>
-                <div id="nav_item">
-                    <a href="/nutrition_plan/nutrition_plan.html">
-                        <div>영양 계획</div>
-                    </a>
-                    <a href="/my_exercise/my_exercise.html">
-                        <div>나의 운동</div>
-                    </a>
-                    <a href="/exercise_program/exercise_program.html">
-                        <div>운동 프로그램</div>
-                    </a>
-                    <a href="/community/community.html">
-                        <div>커뮤니티</div>
-                    </a>
-                    <a href="/introduction _coaches/introduction _coaches.html">
-                        <div>코치 소개</div>
-                    </a>
-                </div>
-                <div><!-- 위치조정 위한 div 태그 --></div>
-            </nav>
-        </div>
-        <div id="top_banner_text">
-            <p>저희는 정교하게 구성된 운동 프로그램을 제공하여 목표 달성을 지원하며</p>
-            <p>운동의 다양한 영역에서 뛰어난 성과를 이루실 수 있도록 돕고자 합니다. </p>
-        </div>
-        <!-- nav_contain  -->
+      <div id="nav_contain">
+        <nav id="nav">
+          <div>
+            <a href="/main_page/main.html">
+              <h1>My Coach</h1>
+            </a>
+          </div>
+          <div id="nav_item">
+            <a href="/nutrition_plan/nutrition_plan.html">
+              <div>영양 계획</div>
+            </a>
+            <a href="/my_exercise/my_exercise.html">
+              <div>나의 운동</div>
+            </a>
+            <a href="/exercise_program/exercise_program.html">
+              <div>운동 프로그램</div>
+            </a>
+            <a href="/community/community.html">
+              <div>커뮤니티</div>
+            </a>
+            <a href="/introduction _coaches/introduction _coaches.html">
+              <div>코치 소개</div>
+            </a>
+          </div>
+          <div><!-- 위치조정 위한 div 태그 --></div>
+        </nav>
+      </div>
+      <div id="top_banner_text">
+        <p>
+          저희는 정교하게 구성된 운동 프로그램을 제공하여 목표 달성을 지원하며
+        </p>
+        <p>
+          운동의 다양한 영역에서 뛰어난 성과를 이루실 수 있도록 돕고자 합니다.
+        </p>
+      </div>
+      <!-- nav_contain  -->
     </div>
     <main>
-        <div id="main_container">
-            <div id="main_wrapper">
-                <div id="top">
-                    <div id="img"></div>
-                    <div></div>
-                </div>
-                <div id="bottom">
-                    <div id="left">
-                        <div id="program_title"></div>
-                        <div id="program_intro"></div>
-                    </div>
-                    <div id="right">
-                        <table>
-                            <tr>
-                                <tbody>
-                                    <td><strong>ProgramOverview</strong></td>
-                                    <td></td>
-                                    <tr>
-                                        <td>ProgramLevel</td>
-                                        <td id="ProgramLevel">내용</td>
-                                    </tr>
-                                    <tr>
-                                        <td>programGoal</td>
-                                        <td id="programGoal">내용</td>
-                                    </tr>
-                                </tbody>
-                                <tfoot></tfoot>
-                        </table>
-                    </div>
-                </div>
+      <div id="main_container">
+        <div id="main_wrapper">
+          <div id="my_exercise_title">내가 선택한 프로그램</div>
+          <div id="top">
+            <div id="img"></div>
+            <div></div>
+          </div>
+          <div id="bottom">
+            <div id="left">
+              <div id="program_title"></div>
+              <div id="program_intro"></div>
             </div>
+            <div id="right">
+              <table>
+                <tr>
+                  <tbody>
+                    <td><strong>ProgramOverview</strong></td>
+                    <td></td>
+                    <tr>
+                      <td>ProgramLevel</td>
+                      <td id="ProgramLevel">내용</td>
+                    </tr>
+                    <tr>
+                      <td>programGoal</td>
+                      <td id="programGoal">내용</td>
+                    </tr>
+                  </tbody>
+                  <tfoot></tfoot>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
-</body>
-<script src="my_exercise.js"></script>
-
+  </body>
+  <script src="my_exercise.js"></script>
 </html>

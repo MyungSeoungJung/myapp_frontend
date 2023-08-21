@@ -91,7 +91,7 @@ btn.addEventListener("click", async (e) => {
 // 프로그램 불러오는 곳
 
 (async () => {
-  const response = await fetch("http://localhost:8080/program");
+  const response = await fetch("http://localhost:8080/program/getProgram");
 
   result = await response.json();
 

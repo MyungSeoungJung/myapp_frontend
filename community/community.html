@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      font-size: 14px;
+    }
+
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0 auto;
+    }
+
+    /* -------------------------top_banner----------------------- */
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    #top_banner {
+      width: 100%;
+      background-color: rgb(170, 170, 170);
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #top_banner #top_banner_text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 200px;
+    }
+
+    /* 네비게이션 ------------------------------------------------*/
+    #nav_contain {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      background-color: black;
+      height: 80px;
+      color: white;
+      width: 97.5vw;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 25px;
+    }
+
+    #nav_item {
+      display: flex;
+      width: 700px;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 100px;
+    }
+
+    nav h1 {
+      margin-left: 30px;
+    }
+  </style>
+  <body>
+    <!-- 탑 베너 -->
+    <div id="top_banner">
+      <div id="nav_contain">
+        <nav id="nav">
+          <div>
+            <a href="/main_page/main.html">
+              <h1>My Coach</h1>
+            </a>
+          </div>
+          <div id="nav_item">
+            <a href="/nutrition_plan/nutrition_plan.html">
+              <div>영양 계획</div>
+            </a>
+            <a href="/my_exercise/my_exercise.html">
+              <div>나의 운동</div>
+            </a>
+            <a href="/exercise_program/exercise_program.html">
+              <div>운동 프로그램</div>
+            </a>
+            <a href="/community/community.html">
+              <div>커뮤니티</div>
+            </a>
+            <a href="/introduction _coaches/introduction _coaches.html">
+              <div>코치 소개</div>
+            </a>
+          </div>
+          <div><!-- 위치조정 위한 div 태그 --></div>
+        </nav>
+      </div>
+      <div id="top_banner_text">
+        <p>
+          저희는 정교하게 구성된 운동 프로그램을 제공하여 목표 달성을 지원하며
+        </p>
+        <p>
+          운동의 다양한 영역에서 뛰어난 성과를 이루실 수 있도록 돕고자 합니다.
+        </p>
+      </div>
+      <!-- nav_contain  -->
+    </div>
+  </body>
+</html>
