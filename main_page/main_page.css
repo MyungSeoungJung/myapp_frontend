@@ -59,7 +59,7 @@
    div ul {
      position: absolute;
      z-index: 1;
-     width: 1300px;
+     width: 80%;
      list-style-type: none;
      display: flex;
      flex-direction: row;
@@ -76,6 +76,8 @@
      height: 100%;
      object-fit: cover;
      z-index: -1;
+     filter: brightness(0.6) contrast(0.8);
+
    }
 
    ul li {
@@ -120,6 +122,15 @@
      justify-content: center;
      height: 100%;
    }
+
+
+/* 메인 페이지 운동 프로그램 띄우는 곳 */
+.main_content .box {
+  background-color: black;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
 
 
    /* 코치 소개  부분 ------------------------------------------------------------------------------------------------------------------------------------*/
@@ -194,6 +205,7 @@
      margin-top: 25px;
      margin-bottom: 100px;
      margin-left: 5px;
+     color: black;
    }
 
    #coach_middle_text {
