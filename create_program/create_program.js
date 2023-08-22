@@ -10,16 +10,16 @@ function creatLi(
   li.dataset.goal = programGoal;
   li.innerHTML = `
   <div>
-  <p>수준: ${programLevel}</p>
+  <p id="level">수준: ${programLevel}</p>
   <hr/>
-  <p>목적: ${programGoal}</p>
+  <p  id="goal">목적: ${programGoal}</p>
   <hr/>
-  <p>제목: ${programTitle}</p>
+  <p  id="title">제목: ${programTitle}</p>
   <hr>
   <div>이미지 : <img width="auto" height="30" src="${img}"></div>
   <hr />
-  <p>소개글: ${programIntro}</p>
-  <p>코치이름: ${coachName}</p>
+  <p id ="intro">소개글: ${programIntro}</p>
+  <p id ="coach">코치이름: ${coachName}</p>
   </div>
   `;
   return li;

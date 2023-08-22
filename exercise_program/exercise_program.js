@@ -26,8 +26,6 @@ function creatLi(
   return li;
 }
 
-// 프로그램 불러오는 곳
-
 let currentPage = 0; // 현재 페이지 번호
 let isLastPage = false; // 마지막 페이지 인지 여부
 const PAGE_SIZE = 8; // 고정된 페이지 사이즈
@@ -45,10 +43,8 @@ async function getPagedList(page, query) {
 
   const response = await fetch(url);
   const result = await response.json();
-
   const ul = document.querySelector("ul");
 
-  // 목록 초기화
   ul.innerHTML = "";
   for (let item of result.content) {
     ul.append(
@@ -134,3 +130,79 @@ function setBtnActive() {
     }
   });
 })();
+
+(() => {
+  const ul = document.querySelector("ul");
+  console.log(ul);
+  ul.addEventListener("click", (e) => {
+    if (e.target.classList.contains("modifybutton")) {
+      // jsdoc type 힌트를 넣어줌 = 자동완성하기 위해
+      /** @type {HTMLButtonElement} */
+      // 클릭한 버튼의 부모 부모 부모 즉 li선택
+      const selectCard = e.target.parentElement.parentElement.parentElement;
+      console.log(selectCard);
+
+      // 클릭한 버튼의 content값 가져오기
+      const content = selectCard.querySelector("h3");
+      const title = selectCard.querySelector("div > div");
+
+      // [이벤트 위임]수정 클릭하면 보달모달 레이어 띄우기
+      /** @type {HTMLDivElement} */
+      const layer = document.querySelector("#modify-layer");
+      layer.hidden = false;
+
+      // 모달박스 입력창 접촉
+      const modalTitleInput = document.querySelector(
+        "#modify-box input:nth-of-type(1)"
+      );
+      const modalContentInput = document.getElementById("modi");
+      // 왜 2번째 인풋 null이 뜨냐고
+      //  const modalContentInput = document.querySelector("#modify-box input:nth-of-type(2)");
+      //  console.log(modalContentInput);
+
+      // 기존에 있던 값 모달창 입력창에 넣기
+      modalTitleInput.value = title.textContent;
+      modalContentInput.value = content.textContent;
+
+      const button = layer.querySelectorAll("button");
+      console.log(button[0]);
+      console.log(button[1]);
+
+      button[0].addEventListener("click", async (e) => {
+        e.preventDefault(); //왜 e.target.preventDefault하면 Uncaught오류가 뜨는지
+        title.textContent = modalTitleInput.value;
+        content.textContent = modalContentInput.value;
+        //데이터 특정하기 위한 li의 dataset.no속성 뽑아오기
+        const no = document.querySelector("li").dataset.no;
+        const response = await fetch(`http://localhost:8080/posts/${no}`, {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            title: title.textContent,
+            content: content.textContent,
+          }),
+        });
+
+        layer.hidden = true;
+      });
+    } //if문
+  }); //ul.addEventListener
+})(); // 즉시
+
+// 로컬 스토리지 저장
+const ul = document.querySelector("ul");
+ul.addEventListener("click", async (e) => {
+  e.preventDefault();
+  const id = e.target.parentElement.parentElement.dataset.no;
+  console.log(id);
+  const response = await fetch(
+    `http://localhost:8080/program/detailProgram?id=${id}`
+  );
+  const result = await response.json();
+  console.log(result);
+  localStorage.setItem("result", JSON.stringify(result));
+  window.location.href =
+    "/detail_view_exercise_program/detai_view_exercise_program.html";
+});
