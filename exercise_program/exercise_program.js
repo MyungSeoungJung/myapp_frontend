@@ -191,18 +191,12 @@ function setBtnActive() {
   }); //ul.addEventListener
 })(); // 즉시
 
-// 로컬 스토리지 저장
 const ul = document.querySelector("ul");
 ul.addEventListener("click", async (e) => {
   e.preventDefault();
+  // 클릭한 객체 no값 추출
   const id = e.target.parentElement.parentElement.dataset.no;
   console.log(id);
-  const response = await fetch(
-    `http://localhost:8080/program/detailProgram?id=${id}`
-  );
-  const result = await response.json();
-  console.log(result);
-  localStorage.setItem("result", JSON.stringify(result));
-  window.location.href =
-    "/detail_view_exercise_program/detai_view_exercise_program.html";
+  // 이동 시킬떼 뒤에 id=${id} 파라미터 붙게끔 이동
+  window.location.href = `/detail_view_exercise_program/detai_view_exercise_program.html?id=${id}`;
 });

@@ -5,6 +5,1150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <style>
+    * {
+      font-size: 14px;
+    }
+
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0 auto;
+    }
+
+    /* -------------------------top_banner----------------------- */
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    #top_banner {
+      width: 100%;
+      background-color: rgb(170, 170, 170);
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #top_banner #top_banner_text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 200px;
+    }
+
+    /* 네비게이션 ------------------------------------------------*/
+    #nav_contain {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      background-color: black;
+      height: 80px;
+      color: white;
+      width: 97.5vw;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 25px;
+    }
+
+    #nav_item {
+      display: flex;
+      width: 700px;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 100px;
+    }
+
+    nav h1 {
+      margin-left: 30px;
+    }
+    #main_container {
+      width: 100vw;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      /* flex-direction: column; */
+      margin-top: 100px;
+      margin-bottom: 200px;
+    }
+
+    #main_wrapper {
+      width: 80%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #top {
+      flex: 0.6;
+      display: flex;
+    }
+
+    #bottom {
+      margin-top: 30px;
+      flex: 0.4;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    #left {
+      display: flex;
+      flex-direction: column;
+      flex: 0.6;
+    }
+
+    #top > div:nth-of-type(2) {
+      flex: 0.5;
+    }
+
+    #img {
+      flex: 0.5;
+    }
+
+    #img img {
+      border-radius: 30px;
+      width: 100%;
+      height: 100%;
+    }
+
+    #program_title {
+      flex: 1;
+      font-size: 2.1rem;
+    }
+
+    #program_intro {
+      flex: 1;
+      font-size: 1.4rem;
+    }
+
+    #right {
+      flex: 0.3;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #right table {
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 0 10px rgba(187, 187, 187, 0.8);
+      width: 100%;
+      height: 90%;
+      padding-left: 20px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+
+      margin-bottom: 20px;
+    }
+
+    #right table td:nth-of-type(2) {
+      padding-right: 30px;
+    }
+    #my_exercise_title {
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    .detail_exercise_table th {
+      text-align: center;
+      width: 50px;
+      font-size: 1.2rem;
+      background-color: rgb(182, 182, 182);
+    }
+    .detail_exercise_table td {
+      text-align: center;
+      width: 50px;
+    }
+    .detail_exercise_table th:nth-of-type(1) {
+      text-align: start;
+      width: 200px;
+    }
+    .detail_exercise_table td:nth-of-type(1) {
+      text-align: start;
+      width: 200px;
+    }
+    #exercise_table_container {
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: row;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+    #exercise_table_per_work_wrapper:first-of-type {
+      margin-left: 40px;
+    }
+    #exercise_table_per_work_wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-left: 5px;
+    }
+    .day {
+      border: 1px solid black;
+      margin-top: 30px;
+      border-radius: 10px;
+      width: 400px;
+      padding-left: 10px;
+      padding-bottom: 15px;
+    }
+    .day:last-child {
+      margin-right: 40px;
+    }
+  </style>
+  <body>
+    <div id="top_banner">
+      <div id="nav_contain">
+        <nav id="nav">
+          <div>
+            <a href="/main_page/main.html">
+              <h1>My Coach</h1>
+            </a>
+          </div>
+          <div id="nav_item">
+            <a href="/nutrition_plan/nutrition_plan.html">
+              <div>영양 계획</div>
+            </a>
+            <a href="/my_exercise/my_exercise.html">
+              <div>나의 운동</div>
+            </a>
+            <a href="/exercise_program/exercise_program.html">
+              <div>운동 프로그램</div>
+            </a>
+            <a href="/community/community.html">
+              <div>커뮤니티</div>
+            </a>
+            <a href="/introduction _coaches/introduction _coaches.html">
+              <div>코치 소개</div>
+            </a>
+          </div>
+          <div><!-- 위치조정 위한 div 태그 --></div>
+        </nav>
+      </div>
+      <div id="top_banner_text">
+        <p>
+          저희는 정교하게 구성된 운동 프로그램을 제공하여 목표 달성을 지원하며
+        </p>
+        <p>
+          운동의 다양한 영역에서 뛰어난 성과를 이루실 수 있도록 돕고자 합니다.
+        </p>
+      </div>
+      <!-- nav_contain  -->
+    </div>
+    <div id="main_container">
+      <div id="main_wrapper">
+        <div id="my_exercise_title">내가 선택한 프로그램</div>
+        <div id="top">
+          <div id="img"></div>
+          <div></div>
+        </div>
+        <div id="bottom">
+          <div id="left">
+            <div id="program_title"></div>
+            <div id="program_intro"></div>
+          </div>
+          <div id="right">
+            <table>
+              <tr>
+                <tbody>
+                  <td><strong>ProgramOverview</strong></td>
+                  <td></td>
+                  <tr>
+                    <td>Coach</td>
+                    <td id="coach_name">내용</td>
+                  </tr>
+                  <tr>
+                    <td>ProgramLevel</td>
+                    <td id="ProgramLevel">내용</td>
+                  </tr>
+                  <tr>
+                    <td>programGoal</td>
+                    <td id="programGoal">내용</td>
+                  </tr>
+                </tbody>
+                <tfoot></tfoot>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div id="exercise_table_container">
+          <div id="exercise_table_per_work_wrapper">
+            <h1>week1</h1>
+            <div class="day">
+              <h2>Day 1</h2>
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 2</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 3</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 4</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 5</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- 일별로 나뉘는 wrapper -->
+          </div>
+          <div id="exercise_table_per_work_wrapper">
+            <h1>week2</h1>
+
+            <div class="day">
+              <h2>Day 1</h2>
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 2</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 3</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 4</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- 일별로 나뉘는 wrapper -->
+          </div>
+          <div id="exercise_table_per_work_wrapper">
+            <h1>week3</h1>
+
+            <div class="day">
+              <h2>Day 1</h2>
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 2</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 3</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 4</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- 일별로 나뉘는 wrapper -->
+          </div>
+          <div id="exercise_table_per_work_wrapper">
+            <h1>week4</h1>
+
+            <div class="day">
+              <h2>Day 1</h2>
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 2</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 3</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 4</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- 일별로 나뉘는 wrapper -->
+          </div>
+          <div id="exercise_table_per_work_wrapper">
+            <h1>week5</h1>
+
+            <div class="day">
+              <h2>Day 1</h2>
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 2</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 3</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="day">
+              <h2>Day 4</h2>
+
+              <table class="detail_exercise_table">
+                <thead>
+                  <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Intensity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Smith Machine Hack Squat</td>
+                    <td>1</td>
+                    <td>5-10</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Back Extension (Weighted)</td>
+                    <td>2</td>
+                    <td>10-15</td>
+                    <td>7-8</td>
+                  </tr>
+                  <tr>
+                    <td>Walking Lunge</td>
+                    <td>2</td>
+                    <td>20-30</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Seated Hamstring Curl</td>
+                    <td>2</td>
+                    <td>8-12</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- 일별로 나뉘는 wrapper -->
+          </div>
+          <!-- 운동 테이블 컨테이너 -->
+        </div>
+      </div>
+    </div>
+  </body>
   <script src="detai_view_exercise_program.js"></script>
 </html>
