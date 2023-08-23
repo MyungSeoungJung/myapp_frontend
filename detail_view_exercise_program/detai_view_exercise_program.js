@@ -23,3 +23,78 @@ document.addEventListener("DOMContentLoaded", async () => {
     coach_name.innerHTML = result.coachName;
   }
 });
+
+function creatLi(userId, content, userName, userSex, userAge) {
+  const li = document.createElement("li");
+  li.dataset.no = userId;
+  li.innerHTML = `
+  <div class = "li_container">
+  <div class ="li_top">
+  <p class = "li_user_name">${userName}</p><p class = "li_user_sex">${userSex},&nbsp;${userAge}</p>
+  </div>
+  <div class = "li_content_wrapper">
+  <p class = "li_content"> ${content}</p>
+  </div>
+  </div>
+  `;
+  return li;
+}
+const btn = document.querySelector("#submit");
+const ul = document.querySelector("ul");
+
+function getCookie(name) {
+  let matches = document.cookie.match(
+    new RegExp(
+      "(?:^|; )" +
+        name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
+        "=([^;]*)"
+    )
+  );
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+btn.addEventListener("click", async () => {
+  const text_area = document.querySelector("#comment");
+  const id = window.location.search;
+  const response = await fetch(`http://localhost:8080/program/comments${id}`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${getCookie("token")}`,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      content: text_area.value,
+    }),
+  });
+
+  const result = await response.json();
+  // const { data } = result;
+  ul.prepend(
+    creatLi(
+      result.userId,
+      result.content,
+      result.userName,
+      result.userSex,
+      result.userAge
+    )
+  );
+});
+
+// 댓글 가져오기
+(async () => {
+  const id = window.location.search;
+  const response = await fetch(`http://localhost:8080/program/getComment${id}`);
+
+  const result = await response.json();
+  console.log(result);
+  for (let item of result) {
+    ul.prepend(
+      creatLi(
+        item.userId,
+        item.content,
+        item.userName,
+        item.userSex,
+        item.userAge
+      )
+    );
+  }
+})();
