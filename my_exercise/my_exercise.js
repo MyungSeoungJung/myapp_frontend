@@ -14,7 +14,21 @@ const intro = document.querySelector("#program_intro");
 const level = document.querySelector("#ProgramLevel");
 const goal = document.querySelector("#programGoal");
 const coach_name = document.querySelector("#coach_name");
+
 (async () => {
+  const usertext = document.querySelector("#username");
+  const username = await fetch("http://localhost:8080/user/main", {
+    headers: {
+      Authorization: `Bearer ${getCookie(
+        "token" //토큰을 get해서
+      )}`,
+    },
+  }); //함수 구현
+  const user_result = await username.json(); //
+  console.log(user_result);
+  usertext.textContent = user_result.name + "님";
+
+  // 프로그램 get
   const response = await fetch("http://localhost:8080/program/myExercise", {
     headers: {
       Authorization: `Bearer ${getCookie(

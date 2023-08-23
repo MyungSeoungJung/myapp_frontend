@@ -8,12 +8,30 @@
   <title>Document</title>
 </head>
 <style>
-
+  
 </style>
 
 <body>
-  <!-- top banner -->
+  <header>
+    <div class="header-wrapper">
+      <div>
+        <!-- 타이틀 가운데 넣기위한 div태그 -->
+      </div>
+      <div>
+        <h1>MyCoach</h1>
+      </div>
+      <div id="header-right">
+        <div id="username"></div>
+        <div id="logout">LOGOUT</div>
+      </div>
+    </div>
+  </header>
+
   <div id="top_banner">
+    <div id="video_container">
+    <video id="fullscreen-video" autoplay loop muted>
+      <source src="/img/video/my_exercise.mp4" type="video/mp4" />
+  </div>
     <div id="nav_contain">
       <nav id="nav">
         <div>
@@ -42,22 +60,31 @@
       </nav>
     </div>
     <div id="top_banner_text">
-      <p>귀하의 개인정보를 바탕으로</p>
-      <p>권장되는 3대 영 양소 섭취량을 안내해 드리겠습니다</p>
+      <p>
+        귀하의 개인정보를 바탕으로      </p>
+      <p>
+권장되는 3대 영 양소 섭취량을 안내해 드리겠습니다 </p>
     </div>
     <!-- nav_contain  -->
   </div>
+
+
+
+
   <!-- 먹어야 될 칼로리 -->
   <section>
     <h2>일일 권장 칼로리 섭취량</h2>
     <p id="Calorie"></p>
   </section>
   <!-- main 매크로 -->
-  <main>
+  <main class="content">
     <div class="graph_contain">
       <p>탄수화물</p>
       <h2 class="macro"></h2>
-      <div class="progressbar"></div>
+      <div class="progressbar">
+        <div class="progressbar_ani"></div>
+
+      </div>
       <div>
         <!-- flex위한 태그 -->
       </div>
@@ -66,7 +93,10 @@
     <div class="graph_contain">
       <p>단백질</p>
       <h2 class="macro"></h2>
-      <div class="progressbar"></div>
+      <div class="progressbar">
+        <div class="progressbar_ani"></div>
+
+      </div>
       <div>
         <!-- flex위한 태그 -->
       </div>
@@ -75,7 +105,9 @@
     <div class="graph_contain">
       <p>지방</p>
       <h2 class="macro"></h2>
-      <div class="progressbar"></div>
+      <div class="progressbar">
+        <div class="progressbar_ani"></div>
+      </div>
       <div>
         <!-- flex위한 태그 -->
       </div>
@@ -85,4 +117,7 @@
 </body>
 <script src="nutrition_plan.js"></script>
 
+<script>
+
+</script>
 </html>

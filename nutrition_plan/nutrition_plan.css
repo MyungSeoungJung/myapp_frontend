@@ -22,38 +22,63 @@ a:visited {
 
 #top_banner {
     width: 100vw;
-    background-color: rgb(170, 170, 170);
-    height: 500px;
+    height: 600px;
     display: flex;
     flex-direction: column;
 }
 
-#top_banner #top_banner_text {
+#top_banner_text {
+    width: 100%;
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 200px;
-}
+    margin-top: 280px;
+    z-index: 5;
+    color: white;
+  }
+  #top_banner_text p {
+    font-weight: 900;
+    font-size: 1.4rem;
+  }
 
 /* --------------------nav---------------------------- */
 #nav_contain {
     display: flex;
+    width: 100%;
     justify-content: center;
-}
+    position: absolute;
+    z-index: 1;
+    align-items: center;
+  }
 
-nav {
+  nav {
     display: flex;
     flex-direction: row;
     background-color: black;
     height: 80px;
     color: white;
-    width: 97.5vw;
-    justify-content: space-between;
+    width: 95%;
     align-items: center;
+    justify-content: space-between;
     margin-top: 25px;
-}
+  }
+  #video_container {
 
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+  }
+  #fullscreen-video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4) contrast(1);
+  }
 #nav_item {
     display: flex;
     width: 700px;
@@ -118,7 +143,7 @@ main .graph_contain {
     position: relative;
 }
 
-.progressbar::after {
+.progressbar_ani {
     content: "";
     position: absolute;
     top: 0;
@@ -126,7 +151,6 @@ main .graph_contain {
     height: 15px;
     width: 0;
     background: rgb(9, 218, 44);
-    animation: progress 1s ease forwards;
 }
 
 @keyframes progress {
@@ -138,3 +162,58 @@ main .graph_contain {
         width: 80%;
     }
 }
+
+/* 네비게이션 */
+/* 헤더 */
+header {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+  }
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  #header-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header h1 {
+    margin-left: 110px;
+  }
+
+  header #logout {
+    margin-left: 20px;
+  }
+
+  #logout {
+    background-color: #0d0c22;
+    border: none;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #logout:hover {
+    opacity: 0.7;
+  }
+
+  #logout span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
