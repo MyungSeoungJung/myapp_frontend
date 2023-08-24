@@ -2,7 +2,12 @@
    * {
      box-sizing: border-box;
      font-size: 14px;
+     font-family: 'Noto Sans KR', sans-serif;
    }
+   h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 2rem;
+  }
 
    body {
      margin: 0;
@@ -240,6 +245,7 @@
      width: 150px;
      text-align: center;
      color: white;
+     
    }
 
    /* 코치 소개 버튼 */

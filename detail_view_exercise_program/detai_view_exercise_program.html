@@ -3,19 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Noto+Sans+KR:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family
+=Dancing+Script:wght@700&family=Noto+Sans+KR:wght@800&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Document</title>
   </head>
   <style>
     * {
       font-size: 14px;
+      font-family: "Noto Sans KR", sans-serif;
     }
-
+    h1 {
+      font-family: "Dancing Script", cursive;
+      font-size: 2rem;
+    }
     body {
       box-sizing: border-box;
       margin: 0;
       padding: 0 auto;
     }
 
+    #logout {
+      background-color: #0d0c22;
+      border: none;
+      color: white;
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
     /* -------------------------top_banner----------------------- */
     a {
       color: white;
@@ -25,6 +55,34 @@
     a:visited {
       text-decoration: none;
       color: inherit;
+    }
+    header {
+      width: 100vw;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .header-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    #header-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header h1 {
+      margin-left: 110px;
+    }
+
+    header #logout {
+      margin-left: 20px;
     }
 
     #top_banner {
@@ -309,6 +367,20 @@
     }
   </style>
   <body>
+    <header>
+      <div class="header-wrapper">
+        <div>
+          <!-- 타이틀 가운데 넣기위한 div태그 -->
+        </div>
+        <div>
+          <h1>MyCoach</h1>
+        </div>
+        <div id="header-right">
+          <div id="username"></div>
+          <div id="logout">LOGOUT</div>
+        </div>
+      </div>
+    </header>
     <div id="top_banner">
       <div id="nav_contain">
         <nav id="nav">
@@ -385,7 +457,7 @@
         </div>
         <div id="exercise_table_container">
           <div id="exercise_table_per_work_wrapper">
-            <h1>week1</h1>
+            <h2>week1</h2>
             <div class="day">
               <h2>Day 1</h2>
               <table class="detail_exercise_table">
@@ -588,7 +660,7 @@
             <!-- 일별로 나뉘는 wrapper -->
           </div>
           <div id="exercise_table_per_work_wrapper">
-            <h1>week2</h1>
+            <h2>week2</h2>
 
             <div class="day">
               <h2>Day 1</h2>
@@ -753,7 +825,7 @@
             <!-- 일별로 나뉘는 wrapper -->
           </div>
           <div id="exercise_table_per_work_wrapper">
-            <h1>week3</h1>
+            <h2>week3</h2>
 
             <div class="day">
               <h2>Day 1</h2>
@@ -918,7 +990,7 @@
             <!-- 일별로 나뉘는 wrapper -->
           </div>
           <div id="exercise_table_per_work_wrapper">
-            <h1>week4</h1>
+            <h2>week4</h2>
 
             <div class="day">
               <h2>Day 1</h2>
@@ -1083,7 +1155,7 @@
             <!-- 일별로 나뉘는 wrapper -->
           </div>
           <div id="exercise_table_per_work_wrapper">
-            <h1>week5</h1>
+            <h2>week5</h2>
 
             <div class="day">
               <h2>Day 1</h2>
@@ -1270,4 +1342,7 @@
     </div>
   </body>
   <script src="detai_view_exercise_program.js"></script>
+  <script src="/main_page/auth.js"></script>
+  <script src="/main_page/log_out.js"></script>
+  <script src="/main_page/get_name.js"></script>
 </html>
