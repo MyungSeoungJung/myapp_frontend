@@ -160,7 +160,7 @@ recommend_program_btn.addEventListener("click", async () => {
     count++;
   }
   complete.style.display = "block";
-  recommend_program_btn = "hidden";
+  recommend_program_btn.style.display = "none";
 });
 
 // 추천 운동프로그램 선택
@@ -216,6 +216,43 @@ complete.addEventListener("click", async () => {
     window.location.href = "http://localhost:5500/index.html";
   } else {
     // 실패한 경우 처리
-    alert("회원가입 실패");
+    alert("중복된 휴대폰 번호입니다.");
   }
 }); //회원가입 클릭 버튼시 제출
+
+const message = document.querySelectorAll(".message");
+message.forEach((item) => {
+  item.style.display = "none";
+});
+
+height.addEventListener("input", height_input);
+weight.addEventListener("input", height_input);
+age.addEventListener("input", ageInput);
+
+// 최대 3자리수 입력 & 키 앞자리수 1or2만 받기
+function height_input(e) {
+  const letter = e.target.value;
+  const message1 = e.target.nextElementSibling;
+  if (letter.length > 3) {
+    e.target.value = letter.slice(0, 4);
+    // e.target.style.borderColor = "red";
+    message1.style.display = "block"; // p 태그 보이기
+  } else {
+    // e.target.style.borderColor = "gray";
+    message1.style.display = "none"; // p 태그 숨기기
+  }
+}
+
+// 나이 최대 2자리수 입력
+function ageInput(e) {
+  const letter = e.target.value;
+  const message = e.target.nextElementSibling;
+  if (letter.length > 2) {
+    e.target.value = letter.slice(0, 3);
+    // e.target.style.borderColor = "red";
+    message.style.display = "block"; // p 태그 보이기
+  } else {
+    // e.target.style.borderColor = "gray";
+    message.style.display = "none"; // p 태그 숨기기
+  }
+}

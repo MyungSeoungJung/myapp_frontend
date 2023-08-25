@@ -19,6 +19,15 @@
       box-sizing: border-box;
     }
 
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: inherit;
+    }
     main {
       display: flex;
       flex-direction: column;
@@ -60,6 +69,9 @@
     input {
       width: 100%;
       height: 40px;
+      outline: none;
+      padding-left: 10px;
+      margin-bottom: 1px;
     }
     .name {
       display: flex;
@@ -138,23 +150,35 @@
       border-radius: 7px;
       color: white;
     }
+    .message {
+      color: red;
+      outline: none;
+      border-color: gray;
+    }
   </style>
   <body>
     <main>
       <div id="main-container">
         <header>
-          <h1>MyCoach</h1>
+          <a href="/index.html"> <h1>MyCoach</h1></a>
           <h2>회원가입</h2>
         </header>
         <div id="input-box">
           <div>
             <form class="name">
               <input placeholder="이름을 입력해주세요" />
-              <input placeholder="사용하실 비밀번호를 입력해주세요" />
-              <input placeholder="나이를 입력해주세요" />
-              <input placeholder="전화번호를 입력해주세요" />
-              <input placeholder="키를 입력해주세요" />
-              <input placeholder="몸무게를 입력해주세요" />
+              <input
+                placeholder="사용하실 비밀번호를 입력해주세요"
+                type="password"
+              />
+              <input placeholder="나이를 입력해주세요" type="number" />
+              <p class="message">2자리까지만 입력 가능합니다.</p>
+              <input placeholder="전화번호를 입력해주세요" type="number" />
+              <p class="message">숫자만 입력 가능합니다.</p>
+              <input placeholder="키를 입력해주세요" type="number" />
+              <p class="message">3자리까지만 입력 가능합니다.</p>
+              <input placeholder="몸무게를 입력해주세요" type="number" />
+              <p class="message">3자리까지만 입력 가능합니다.</p>
             </form>
           </div>
 

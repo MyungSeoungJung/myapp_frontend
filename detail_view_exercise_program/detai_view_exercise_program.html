@@ -163,7 +163,8 @@
     #left {
       display: flex;
       flex-direction: column;
-      flex: 0.6;
+      flex: 0.7;
+      padding: 20px;
     }
 
     #top > div:nth-of-type(2) {
@@ -183,6 +184,7 @@
     #program_title {
       flex: 1;
       font-size: 2.1rem;
+      margin-bottom: 15px;
     }
 
     #program_intro {
@@ -191,7 +193,7 @@
     }
 
     #right {
-      flex: 0.3;
+      flex: 0.2;
       flex-direction: column;
       display: flex;
       justify-content: center;
@@ -288,13 +290,20 @@
       height: 50px;
       width: 100%;
       font-size: 1.8rem;
+      margin-bottom: 20px;
     }
     #comment_get {
       border-radius: 10px;
       flex: 0.8;
       width: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
       overflow-x: auto;
+      overflow-y: hidden;
+    }
+    #comment_null {
+      width: 100%;
+      font-size: 2em;
+      text-align: center;
     }
     #write_comment {
       flex: 0.2;

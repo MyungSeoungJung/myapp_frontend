@@ -25,9 +25,16 @@ background-color: white;
  border-radius: 20px;
  overflow: hidden;
 }
+#recommend_program_content h1{
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+#recommend_program_content h3{
+  font-size: 1.4rem;
+}
 
 .program_wrapper{
-  margin-top: 40px;
+  margin-top: 50px;
 
 }
 .program_container {
@@ -39,8 +46,8 @@ background-color: white;
   overflow: hidden; 
 }
 .program_container:hover {
-  box-shadow: 0px 4px 20px rgba(0, 47, 255, 0.9); 
-  border: 1px solid rgba(0, 47, 255, 0.9);
+  box-shadow: 0px 4px 20px rgba(0, 255, 85, 0.9); 
+  border: 1px solid rgba(0, 255, 85, 0.9); 
 }
 .program_container .text {
   flex: 4;

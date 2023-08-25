@@ -85,16 +85,26 @@ btn.addEventListener("click", async () => {
   const response = await fetch(`http://localhost:8080/program/getComment${id}`);
 
   const result = await response.json();
-  console.log(result);
-  for (let item of result) {
-    ul.prepend(
-      creatLi(
+
+  // 댓글이 없는 경우 메시지 생성
+  if (!result || result.length === 0) {
+    const li_div = document.createElement("div");
+    const comment_get = document.querySelector("#comment_get");
+    li_div.innerHTML = `
+      <p id = "comment_null">아직 작성된 댓글이 없습니다</p>
+    `;
+    comment_get.prepend(li_div);
+  } else {
+    // 댓글이 있는 경우 각 댓글 생성
+    for (let item of result) {
+      const li = creatLi(
         item.userId,
         item.content,
         item.userName,
         item.userSex,
         item.userAge
-      )
-    );
+      );
+      ul.prepend(li);
+    }
   }
 })();

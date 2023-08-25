@@ -3,79 +3,193 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Noto+Sans+KR:wght@800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family
+=Dancing+Script:wght@700&family=Noto+Sans+KR:wght@800&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <style>
-    * {
-      font-size: 14px;
-    }
-
-    body {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0 auto;
-    }
-
-    /* -------------------------top_banner----------------------- */
-    a {
-      color: white;
-      text-decoration: none;
-    }
-
-    a:visited {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    #top_banner {
-      width: 100%;
-      background-color: rgb(170, 170, 170);
-      height: 500px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    #top_banner #top_banner_text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-top: 200px;
-    }
-
-    /* 네비게이션 ------------------------------------------------*/
-    #nav_contain {
-      display: flex;
-      justify-content: center;
-    }
-
-    nav {
-      display: flex;
-      flex-direction: row;
-      background-color: black;
-      height: 80px;
-      color: white;
-      width: 97.5vw;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 25px;
-    }
-
-    #nav_item {
-      display: flex;
-      width: 700px;
-      justify-content: space-between;
-      align-items: center;
-      margin-right: 100px;
-    }
-
-    nav h1 {
-      margin-left: 30px;
-    }
+      
+      * {
+        font-size: 14px;
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+  
+      h1 {
+        font-family: "Dancing Script", cursive;
+        font-size: 2rem;
+      }
+  
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0 auto;
+      }
+  
+      /* -------------------------top_banner----------------------- */
+      a {
+        color: white;
+        text-decoration: none;
+      }
+  
+      a:visited {
+        text-decoration: none;
+        color: inherit;
+      }
+  
+      #top_banner {
+        width: 100%;
+        /* background-color: rgb(170, 170, 170); */
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+      }
+  
+      /* 네비게이션 ------------------------------------------------*/
+      #nav_contain {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        position: absolute;
+        z-index: 1;
+        align-items: center;
+      }
+      nav {
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+        height: 80px;
+        color: white;
+        width: 95%;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 25px;
+      }
+      #video_container {
+  
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+      }
+      #fullscreen-video {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.4) contrast(1);
+      }
+  
+      #top_banner_text {
+        width: 100%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 280px;
+        z-index: 5;
+        color: white;
+      }
+      #top_banner_text p {
+        font-weight: 900;
+      font-size: 1.4rem;
+      }
+  
+      #nav_item {
+        display: flex;
+        width: 700px;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 100px;
+      }
+  
+      nav h1 {
+        margin-left: 30px;
+      }
+  
+      header {
+       width: 100vw;
+       height: 100px;
+       display: flex;
+       justify-content: center;
+     }
+     .header-wrapper {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       width: 100%;
+       padding: 0 20px;
+     }
+  
+     #header-right {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+  
+     header h1 {
+       margin-left: 110px;
+     }
+  
+     header #logout {
+       margin-left: 20px;
+     }
+  
+     #logout {
+       background-color: #0d0c22;
+       border: none;
+       color: white;
+       width: 100px;
+       height: 50px;
+       text-align: center;
+       border-radius: 10px;
+       align-items: center;
+       justify-content: center;
+       display: flex;
+       flex-direction: column;
+     }
+  
+     #logout:hover {
+       opacity: 0.7;
+     }
+  
+     #logout span {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       height: 100%;
+     }
+  
   </style>
   <body>
-    <!-- 탑 베너 -->
+    <header>
+      <div class="header-wrapper">
+        <div>
+          <!-- 타이틀 가운데 넣기위한 div태그 -->
+        </div>
+        <div>
+          <h1>MyCoach</h1>
+        </div>
+        <div id="header-right">
+          <div id="username"></div>
+          <div id="logout">LOGOUT</div>
+        </div>
+      </div>
+    </header>
+
     <div id="top_banner">
+      <div id="video_container">
+      <video id="fullscreen-video" autoplay loop muted>
+        <source src="/img/video/my_exercise.mp4" type="video/mp4" />
+    </div>
       <div id="nav_contain">
         <nav id="nav">
           <div>
@@ -113,5 +227,10 @@
       </div>
       <!-- nav_contain  -->
     </div>
+
+
   </body>
-</html>
+  <script src="/main_page/auth.js"></script>
+  <script src="/main_page/log_out.js"></script>
+  <script src="/main_page/get_name.js"></script>
+  </html>

@@ -9,17 +9,17 @@ function creatLi(
   const li = document.createElement("li");
   li.dataset.goal = programGoal;
   li.innerHTML = `
-  <div>
+  <div id = "li_cotainer">
   <div id="top" data-no="${id}">
   <div><img width="auto" height="30" src="${img}"></div>
   </div>
   <div id = "bottom">
   <p>${programTitle}</p>
   <p>${programIntro}</p>
+  </div>
   <div id = "program_overview">
   <p>${programLevel}</p>
   <p>${programGoal}</p>
-  </div>
   </div>
   </div>
   `;
@@ -199,4 +199,17 @@ ul.addEventListener("click", async (e) => {
   console.log(id);
   // 이동 시킬떼 뒤에 id=${id} 파라미터 붙게끔 이동
   window.location.href = `/detail_view_exercise_program/detai_view_exercise_program.html?id=${id}`;
+});
+// const inputElement = document.getElementById("#search_input");
+
+const searchInput = document.getElementById("search_input");
+
+searchInput.addEventListener("focus", function () {
+  this.style.boxShadow = "rgba(5, 102, 214, 0.3) 0px 0px 10px 5px";
+  this.style.borderColor = "gray";
+});
+
+searchInput.addEventListener("blur", function () {
+  this.style.boxShadow = "rgba(3, 102, 214, 0.3) 0px 0px 0px 3px";
+  this.style.borderColor = "gray";
 });
