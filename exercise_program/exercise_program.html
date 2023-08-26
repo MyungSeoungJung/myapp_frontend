@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Noto+Sans+KR:wght@800&display=swap"
-    rel="stylesheet"
-  />
-  
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family
-=Dancing+Script:wght@700&family=Noto+Sans+KR:wght@800&display=swap"
-      rel="stylesheet"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <style>
-    * {
-      font-size: 14px;
-      font-family: 'Noto Sans KR', sans-serif;
-      box-sizing: border-box;
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Noto+Sans+KR:wght@800&display=swap"
+    rel="stylesheet" />
 
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family
+=Dancing+Script:wght@700&family=Noto+Sans+KR:wght@800&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  * {
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
 
-    h1 {
-      font-family: "Dancing Script", cursive;
-      font-size: 2rem;
-    }
+  }
 
-    body {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0 auto;
-    }
+  h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 2rem;
+  }
 
-    /* -------------------------top_banner----------------------- */
-    a {
-      color: white;
-      text-decoration: none;
-    }
+  body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 auto;
+  }
 
-    a:visited {
-      text-decoration: none;
-      color: inherit;
-    }
+  /* -------------------------top_banner----------------------- */
+  a {
+    color: white;
+    text-decoration: none;
+  }
 
-    #top_banner {
-      width: 100%;
-      height: 600px;
-      display: flex;
-      flex-direction: column;
-    }
-    #top_banner_text {
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  #top_banner {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #top_banner_text {
     width: 100%;
     position: absolute;
     display: flex;
@@ -66,12 +61,13 @@
     z-index: 5;
     color: white;
   }
+
   #top_banner_text p {
     font-size: 1.2rem;
   }
 
-    /* 네비게이션 ------------------------------------------------*/
-    #nav_contain {
+  /* 네비게이션 ------------------------------------------------*/
+  #nav_contain {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -91,169 +87,209 @@
     justify-content: space-between;
     margin-top: 25px;
   }
+
   #video_container {
 
-width: 100%;
-height: 100%;
-z-index: -10;
-}
-#fullscreen-video {
-position: relative;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-object-fit: cover;
-filter: brightness(0.4) contrast(1);
-}
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+  }
 
-    #nav_item {
-      display: flex;
-      width: 700px;
-      justify-content: space-between;
-      align-items: center;
-      margin-right: 100px;
-    }
+  #fullscreen-video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4) contrast(1);
+  }
 
-    nav h1 {
-      margin-left: 30px;
-    }
+  #nav_item {
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 100px;
+  }
 
-    /* 메인영역 ----------------------------------------------- */
-    #main_container {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 50px;
-    }
-    #main_wrapper {
-      width: 95%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    #main {
-      display: flex;
-      flex-direction: column;
-    }
-    #exercise_program_title {
-      margin-top: 50px;
-      margin-bottom: 50px;
-      font-size: 2rem;
-    }
-    #bottom{
-      /* flex: 1; */
-      height: 150px;
-    }
-    #top{
-      flex: 1;
-    }
-    #program_overview {
-      display: flex;
-      flex: 1;
-    }
-    #serach_box {
-      /* padding-left: 4%;
+  nav h1 {
+    margin-left: 30px;
+  }
+
+  /* 메인영역 ----------------------------------------------- */
+  #main_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  #main_wrapper {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #exercise_program_title {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 2rem;
+  }
+
+  #bottom {
+    /* flex: 1; */
+    height: 150px;
+  }
+
+  #top {
+    flex: 1;
+  }
+
+  #program_overview {
+    display: flex;
+    flex: 1;
+  }
+
+  #serach_box {
+    /* padding-left: 4%;
       padding-right: 4%; */
-      height: 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    ul {
-      border-radius: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      box-shadow: 0 0 10px rgba(156, 156, 156, 0.9);
-      padding-bottom: 40px;
+  ul {
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 10px rgba(156, 156, 156, 0.9);
+    padding-bottom: 40px;
 
-    }
-    li {
-      border-radius: 10px;
-      width: 380px;
-      height: 100%;
-      border: none;
-      box-shadow: 0 0 10px rgba(156, 156, 156, 0.9);
-      list-style: none;
-      margin-top: 30px;
-      margin-left: 25px;
-      margin-right: 25px;
-      justify-content: space-evenly;
-      padding: 10px;
-    }
-    #li_cotainer{
-      display: flex;
-      flex-direction: column;
-    }
-  
-    ul li img {
-      width: 100%;
-      height: 180px;
-      border-radius: 10px;
-    }
-    #page {
-      margin-top: 100px;
-      margin-bottom: 200px;
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-    }
-    button{
+  }
+
+  li {
+    border-radius: 10px;
+    width: 380px;
+    height: 100%;
+    border: none;
+    box-shadow: 0 0 10px rgba(156, 156, 156, 0.9);
+    list-style: none;
+    margin-top: 30px;
+    margin-left: 25px;
+    margin-right: 25px;
+    justify-content: space-evenly;
+    padding: 10px;
+  }
+
+  #li_cotainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ul li img {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+  }
+
+  #page {
+    margin-top: 100px;
+    margin-bottom: 200px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     width: 50px;
     background-color: white;
     border-radius: 10px;
-    }
-    #search_button{
-      height: 33px;
-      width: 80px;
-      margin-left: 10px;
-    }
-    #page button {
-      width: 150px;
-      height: 40px;
-      border-radius: 5px;
-      border: 1px solid black;
-    
-    }
-    #search_input {
-      box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;      border: 1px solid gray;
-      padding-left: 8px;
-      width: 200px;
-      outline: none; 
-      border-radius: 10px;
-      height: 30px;
-    }
-    #program_overview p:nth-of-type(1) {
-      width: 70px;
-      background-color: rgb(128, 128, 128);
-      margin-left: 20px;
-      border-radius: 10px;
-      text-align: center;
-      color: white;
-    }
-    #program_overview p:nth-of-type(2) {
-      width: 70px;
-      background-color: rgb(209, 209, 209);
-      margin-left: 10px;
-      border-radius: 10px;
-      text-align: center;
-    }
+    border: none;
+  }
 
-    ul li p {
-      margin-left: 20px;
-    }
-    header {
+  #search_button {
+    height: 33px;
+    width: 80px;
+    margin-left: 10px;
+  }
+
+  #diet {
+    width: 100px;
+    height: 40px;
+  }
+
+
+  #bulk {
+    width: 100px;
+    height: 40px;
+
+  }
+
+  #page button {
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid black;
+
+  }
+
+  #search_input {
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 10px 2px;
+    border: 1px solid gray;
+    border: none;
+    padding-left: 8px;
+    width: 200px;
+    outline: none;
+    border-radius: 10px;
+    height: 30px;
+  }
+
+  #search_input:focus {
+    box-shadow: rgba(5, 102, 214, 0.4) 0px 0px 10px 5px;
+    /* border: 1px solid gray; */
+  }
+
+  #program_overview p:nth-of-type(1) {
+    width: 70px;
+    background-color: rgb(128, 128, 128);
+    margin-left: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+  }
+
+  #program_overview p:nth-of-type(2) {
+    width: 70px;
+    background-color: rgb(209, 209, 209);
+    margin-left: 10px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  ul li p {
+    margin-left: 20px;
+  }
+
+  header {
     width: 100vw;
     height: 100px;
     display: flex;
     justify-content: center;
   }
+
   .header-wrapper {
     display: flex;
     justify-content: space-between;
@@ -300,11 +336,11 @@ filter: brightness(0.4) contrast(1);
     justify-content: center;
     height: 100%;
   }
+</style>
 
-  </style>
-  <body>
-    <!-- 탑 베너 -->
-    <header>
+<body>
+  <!-- 탑 베너 -->
+  <header>
     <div class="header-wrapper">
       <div>
         <!-- 타이틀 가운데 넣기위한 div태그 -->
@@ -320,9 +356,9 @@ filter: brightness(0.4) contrast(1);
   </header>
   <div id="top_banner">
     <div id="video_container">
-    <video id="fullscreen-video" autoplay loop muted>
-      <source src="/img/video/my_exercise.mp4" type="video/mp4" />
-  </div>
+      <video id="fullscreen-video" autoplay loop muted>
+        <source src="/img/video/my_exercise.mp4" type="video/mp4" />
+    </div>
     <div id="nav_contain">
       <nav id="nav">
         <div>
@@ -362,34 +398,36 @@ filter: brightness(0.4) contrast(1);
   </div>
 
 
-    <main id="main_container">
-      <div id="main_wrapper">
-        <div id="exercise_program_title">운동 프로그램</div>
-        <div id="main">
-          <div id="serach_box">
-            <div><button>다이어트</button> <button>근력운동</button></div>
-            <div>
-              <input type="text" id="search_input" /><button id="search_button">
-                검색
-              </button>
-            </div>
+  <main id="main_container">
+    <div id="main_wrapper">
+      <div id="exercise_program_title">운동 프로그램</div>
+      <div id="main">
+        <div id="serach_box">
+          <div><button id="diet">다이어트</button> <button id="bulk">근력운동</button></div>
+          <div>
+            <input type="text" id="search_input" /><button id="search_button">
+              검색
+            </button>
           </div>
-          <div id="main_content">
-            <ul></ul>
-            <div id="page">
-              <div>
-                <button><</button>
-                <button>></button>
-              </div>
+        </div>
+        <div id="main_content">
+          <ul></ul>
+          <div id="page">
+            <div>
+              <button>
+                < </button>
+                  <button>></button>
             </div>
           </div>
         </div>
       </div>
-    </main>
     </div>
-  </body>
-  <script src="exercise_program.js"></script>
-  <script src="/main_page/auth.js"></script>
-  <script src="/main_page/log_out.js"></script>
-  <script src="/main_page/get_name.js"></script>
+  </main>
+  </div>
+</body>
+<script src="exercise_program.js"></script>
+<script src="/main_page/auth.js"></script>
+<script src="/main_page/log_out.js"></script>
+<script src="/main_page/get_name.js"></script>
+
 </html>

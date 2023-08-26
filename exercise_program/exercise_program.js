@@ -202,14 +202,15 @@ ul.addEventListener("click", async (e) => {
 });
 // const inputElement = document.getElementById("#search_input");
 
-const searchInput = document.getElementById("search_input");
+// const searchInput = document.getElementById("search_input");
 
-searchInput.addEventListener("focus", function () {
-  this.style.boxShadow = "rgba(5, 102, 214, 0.3) 0px 0px 10px 5px";
-  this.style.borderColor = "gray";
-});
+// searchInput.addEventListener("focus", function () {
+//   this.style.boxShadow = "rgba(5, 102, 214, 0.3) 0px 0px 10px 5px";
+//   this.style.borderColor = "gray";
+// });
 
-searchInput.addEventListener("blur", function () {
-  this.style.boxShadow = "rgba(3, 102, 214, 0.3) 0px 0px 0px 3px";
-  this.style.borderColor = "gray";
-});
+// searchInput.addEventListener("blur", function () {
+//   this.style.boxShadow = "none";
+//   this.style.border = "none";
+
+// });

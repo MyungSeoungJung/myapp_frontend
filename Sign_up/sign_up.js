@@ -131,13 +131,41 @@ Goal.forEach((item) => {
   }); //다이어트 item foreach문
 }); // 다이어트 목적 클릭이벤트
 
-// 회원가입 제출 버튼 안 보이게 = 운동 추천 받기 버튼 클릭하면 보이게
+// 초기에는 회원가입 제출 버튼을 숨김
 complete.style.display = "none";
-// -------------운동 추천 받기 클릭시 추천 프로그램 띄움-------------------
-recommend_program.style.display = "none";
-recommend_program_btn.addEventListener("click", async () => {
-  recommend_program.style.display = "block";
 
+// -------------운동 추천 받기 클릭시 추천 프로그램 띄움----------------------------
+recommend_program.style.display = "none";
+// warnning_box.style.display = "none";
+
+recommend_program_btn.addEventListener("click", async () => {
+  // 입력폼 경고창 띄우기
+  const all_input = document.querySelectorAll("input");
+  const warnnig_text = document.querySelector("#warnning");
+  const warnning_box = document.querySelector("#warnning_box");
+  const warnning_Check_btn = document.querySelector("#warnning_Check_btn");
+
+  let foundEmptyField = false; // 빈 필드를 찾았는지 여부를 추적하는 변수
+
+  for (const item of all_input) {
+    if (!item.value || item.value.trim() === "") {
+      // warnning_box.style.display = "block";
+      alert(`${item.placeholder}`)
+      foundEmptyField = true;
+      break; // 빈 필드를 찾았으므로 루프 종료
+    }
+  }
+  if (!foundEmptyField) {  // 빈 필드가 없으면
+    recommend_program.style.display = "block"; // 추천프로그램창 표시
+    complete.style.display = "block";  // 회원가입 제출 버튼 표시
+    recommend_program_btn.style.display = "none"; // 추천프로그램 받기 버튼 숨김
+  }
+
+  // warnning_Check_btn.addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   warnning_box.style.display = "none";
+  // });
+  // ----------------------------------------------------------------------------------------------------
   const response = await fetch(
     "http://localhost:8080/program/recommendProgram"
   );
@@ -159,14 +187,14 @@ recommend_program_btn.addEventListener("click", async () => {
     );
     count++;
   }
-  complete.style.display = "block";
-  recommend_program_btn.style.display = "none";
 });
 
 // 추천 운동프로그램 선택
 let title = "";
 recommend_program_content.addEventListener("click", (e) => {
   e.preventDefault();
+
+  // 추천 운동프로그램 띄우기
   const programContainer = e.target.closest(".program_container");
   if (programContainer) {
     title = programContainer.querySelector(".title").textContent; //클릭시 클릭한 운동 프로그램 value 선택
@@ -256,3 +284,25 @@ function ageInput(e) {
     message.style.display = "none"; // p 태그 숨기기
   }
 }
+
+
+// const all_input = document.querySelectorAll("input");
+// const warnnig_text = document.querySelector("#warnning");
+// const warnning_box = document.querySelector("#warnning_box");
+// const warnning_Check_btn = document.querySelector("#warnning_Check_btn");
+// warnning_box.style.display = "none";
+// all_input.forEach(item => {
+
+//   if (item.value == "null") {
+//     warnning_box.style.display = "block";
+
+//     const p = document.createElement("p")
+//     p = `
+//     <p> 입력해주세요 </p>
+//     `
+//   }
+//   warnning_Check_btn.addEventListener("click", () => {
+//     warnning_box.style.display = "none";
+
+//   })
+// });

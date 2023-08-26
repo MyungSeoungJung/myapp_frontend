@@ -1,9 +1,10 @@
-*{
+* {
   font-size: 14px;
   font-family: 'Noto Sans KR', sans-serif;
 
 }
-#recommend_program{
+
+#recommend_program {
   position: absolute;
   top: 0;
   left: 0;
@@ -13,42 +14,49 @@
   background-color: rgba(0, 0, 0, 0.8);
 
 }
-#recommend_program_content{
-margin: auto;
-margin-top: 80px;
-display: flex;
-flex-direction: column;
-align-items: center;
-background-color: white;
- width: 800px;
- height: 820px;
- border-radius: 20px;
- overflow: hidden;
+
+#recommend_program_content {
+  margin: auto;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 800px;
+  height: 820px;
+  border-radius: 20px;
+  overflow: hidden;
 }
-#recommend_program_content h1{
-  font-size: 2rem;
+
+#recommend_program_content h1 {
+  font-size: 3rem;
   margin-bottom: 30px;
+  margin-top: 20px;
 }
-#recommend_program_content h3{
+
+#recommend_program_content h3 {
   font-size: 1.4rem;
 }
 
-.program_wrapper{
+.program_wrapper {
   margin-top: 50px;
 
 }
+
 .program_container {
   width: 600px;
   height: 150px;
-  display:flex;
+  display: flex;
   border-radius: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
-  overflow: hidden; 
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  overflow: hidden;
 }
+
 .program_container:hover {
-  box-shadow: 0px 4px 20px rgba(0, 255, 85, 0.9); 
-  border: 1px solid rgba(0, 255, 85, 0.9); 
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 10px 8px;
+  border: 1px solid rgba(3, 102, 214, 0.3);
 }
+
 .program_container .text {
   flex: 4;
   display: flex;
@@ -56,24 +64,27 @@ background-color: white;
   margin-left: 10px;
 }
 
-.img{
+.img {
   padding: 0 auto;
   margin: 0;
 }
+
 .img img {
-  width: 200px; 
+  width: 200px;
   height: 150px
 }
-.title{
-  border-bottom: 1px solid rgb(138, 138, 138,0.4);
+
+.title {
+  border-bottom: 1px solid rgb(138, 138, 138, 0.4);
 }
-.content{
+
+.content {
   padding-top: 10px;
 }
 
 /* -------------------완료 확인창------------------ */
-.complete_alert{
-  display:flex;
+.complete_alert {
+  display: flex;
   border-radius: 20px;
   width: 400px;
   height: 400px;
@@ -84,17 +95,20 @@ background-color: white;
   justify-content: center;
   align-items: center;
 }
+
 .complete_alert p:nth-of-type(1) {
   margin-top: 50px;
   flex: 0.5;
   font-size: 1.9rem;
   margin-bottom: 60px;
 }
+
 .complete_alert p:nth-of-type(2) {
   flex: 0.3;
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
+
 /* 프로그램 이름 */
 .complete_alert p:nth-of-type(3) {
   flex: 0.3;
@@ -102,6 +116,7 @@ background-color: white;
   margin-bottom: 10px;
   font-weight: 600;
 }
+
 .complete_alert p:nth-of-type(4) {
   flex: 0.3;
   font-size: 1.3rem;
@@ -112,7 +127,8 @@ background-color: white;
 .complete_alert div {
   flex: 2;
 }
-#complete_alert_button{
+
+#complete_alert_button {
   width: 200px;
   height: 40px;
   color: white;
@@ -121,6 +137,7 @@ background-color: white;
   background-color: rgb(40, 40, 40);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
-#complete_alert_button:hover{
+
+#complete_alert_button:hover {
   opacity: 0.7;
 }
