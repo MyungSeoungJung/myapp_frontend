@@ -1,335 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/recommend_program/recommend_program.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Noto+Sans+KR:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <title>회원가입</title>
+  </head>
+  <style>
+    * {
+      font-size: 14px;
+      font-family: "Noto Sans KR", sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/recommend_program/recommend_program.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Noto+Sans+KR:wght@800&display=swap"
-    rel="stylesheet" />
-  <title>회원가입</title>
-</head>
-<style>
-  * {
-    font-size: 14px;
-    font-family: "Noto Sans KR", sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+    a {
+      text-decoration: none;
+      color: black;
+    }
 
-  a {
-    text-decoration: none;
-    color: black;
-  }
+    a:visited {
+      text-decoration: none;
+      color: inherit;
+    }
 
-  a:visited {
-    text-decoration: none;
-    color: inherit;
-  }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
+    }
 
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    position: relative;
-  }
+    #main-container {
+      width: 350px;
+    }
 
-  #main-container {
-    width: 350px;
-  }
+    header {
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
 
-  header {
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-  }
+    footer {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      position: relative;
+      /* height: 50px; */
+    }
 
-  footer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    position: relative;
-    /* height: 50px; */
-  }
+    form {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+    }
 
-  form {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
-  }
+    /* 헤더 타이틀 / 회원가입 텍스트 */
+    header h1 {
+      font-size: 2rem;
+    }
 
-  /* 헤더 타이틀 / 회원가입 텍스트 */
-  header h1 {
-    font-size: 2rem;
-  }
+    header h2 {
+      font-size: 1.5rem;
+    }
 
-  header h2 {
-    font-size: 1.5rem;
-  }
+    /* 이름/비밀번호/나이등 입력 폼 */
+    input {
+      width: 100%;
+      height: 40px;
+      outline: none;
+      border-color: none;
+      padding-left: 10px;
+      margin-bottom: 4px;
+    }
 
-  /* 이름/비밀번호/나이등 입력 폼 */
-  input {
-    width: 100%;
-    height: 40px;
-    outline: none;
-    border-color: none;
-    padding-left: 10px;
-    margin-bottom: 4px;
-  }
+    input:focus {
+      box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+      border: none;
+      outline: none;
+    }
 
-  input:focus {
-    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
-    border: none;
-    outline: none;
+    .name {
+      display: flex;
+      flex-direction: column;
+    }
 
-  }
+    /* 성별 / 운동 목적 div ---------------*/
+    .sex {
+      display: flex;
+      flex-direction: column;
+    }
 
-  .name {
-    display: flex;
-    flex-direction: column;
-  }
+    .sex > div:first-child {
+      margin-bottom: 10px;
+    }
 
-  /* 성별 / 운동 목적 div ---------------*/
-  .sex {
-    display: flex;
-    flex-direction: column;
-  }
+    form div:nth-of-type(n) {
+      width: 100%;
+      height: 40px;
+      border-radius: 5px;
+      background-color: rgb(250, 250, 250);
+      transition: all 0.2s ease;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: start;
+      padding-left: 10px;
+      padding-top: 10px;
+    }
 
-  .sex>div:first-child {
-    margin-bottom: 10px;
-  }
+    form > div:hover {
+      background-color: #0d0c22;
+      color: white;
+      transform: scale(1.1);
+      background-color: rgba(0, 0, 0, 0.8);
+    }
 
-  form div:nth-of-type(n) {
-    width: 100%;
-    height: 40px;
-    border-radius: 5px;
-    background-color: rgb(250, 250, 250);
-    transition: all 0.2s ease;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    text-align: start;
-    padding-left: 10px;
-    padding-top: 10px;
-  }
+    form div.clicked {
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
+      transform: scale(1.1);
+    }
 
-  form>div:hover {
-    background-color: #0d0c22;
-    color: white;
-    transform: scale(1.1);
-    background-color: rgba(0, 0, 0, 0.8);
-  }
+    /* 운동 목적------------------ */
+    .Goal {
+      display: flex;
+      flex-direction: column;
+      height: 200px;
+    }
 
-  form div.clicked {
-    background-color: rgba(0, 0, 0, 0.85);
-    color: white;
-    transform: scale(1.1);
-  }
+    .Goal > div:first-child {
+      margin-bottom: 10px;
+    }
 
-  /* 운동 목적------------------ */
-  .Goal {
-    display: flex;
-    flex-direction: column;
-    height: 200px;
-  }
+    .Goal div > select {
+      margin-top: 15px;
+      border-radius: 5px;
+      background-color: rgb(40, 40, 40);
+      color: white;
+      width: 100%;
+    }
 
-  .Goal>div:first-child {
-    margin-bottom: 10px;
-  }
+    .Goal div > select option {
+      color: white;
+    }
 
-  .Goal div>select {
-    margin-top: 15px;
-    border-radius: 5px;
-    background-color: rgb(40, 40, 40);
-    color: white;
-    width: 100%;
-  }
+    /* 활동수준/운동경력 ----------------------*/
+    .dropdown {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
 
-  .Goal div>select option {
-    color: white;
-  }
+    select {
+      width: 100%;
+      height: 40px;
+    }
 
-  /* 활동수준/운동경력 ----------------------*/
-  .dropdown {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
+    /* 입력버튼----------------------*/
+    #recommend_program_button,
+    #complete {
+      width: 100%;
+      height: 40px;
+      position: absolute;
+      background-color: rgb(40, 40, 40);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      border: none;
+      border-radius: 7px;
+      color: white;
+    }
 
-  select {
-    width: 100%;
-    height: 40px;
-  }
+    .message {
+      color: red;
+      outline: none;
+      border-color: gray;
+    }
 
-  /* 입력버튼----------------------*/
-  #recommend_program_button,
-  #complete {
-    width: 100%;
-    height: 40px;
-    position: absolute;
-    background-color: rgb(40, 40, 40);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    border: none;
-    border-radius: 7px;
-    color: white;
-  }
+    #warnning_box {
+      position: absolute;
+      display: flex;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
 
-  .message {
-    color: red;
-    outline: none;
-    border-color: gray;
-  }
+    #warnning {
+      margin: auto;
+      margin-top: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      width: 400px;
+      height: 200px;
+      border-radius: 20px;
+      overflow: hidden;
+      justify-content: space-between;
+    }
+    #warnning > p {
+      margin-top: 50px;
+      font-size: 1.6rem;
+    }
+    #warnning > button {
+      width: 150px;
+      height: 50px;
+      margin-bottom: 30px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      background-color: rgb(236, 236, 236);
+      border: none;
+      border-radius: 10px;
+    }
 
-  #warnning_box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
-    /* justify-content: center;
-    align-items: center; */
-  }
+    #warnning > button:hover {
+      box-shadow: rgb(131, 131, 131) 3px 3px 6px 0px inset,
+        rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    }
+  </style>
 
-  #warnning {
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    width: 400px;
-    height: 400px;
-    border-radius: 20px;
-    overflow: hidden;
-    justify-content: end;
-  }
+  <body>
+    <main>
+      <div id="main-container">
+        <header>
+          <a href="/index.html">
+            <h1>MyCoach</h1>
+          </a>
+          <h2>회원가입</h2>
+        </header>
+        <div id="input-box">
+          <div>
+            <form class="name">
+              <input placeholder="이름을 입력해주세요" />
+              <input
+                placeholder="사용하실 비밀번호를 입력해주세요"
+                type="password"
+              />
+              <input placeholder="나이를 입력해주세요" type="number" />
+              <p class="message">2자리까지만 입력 가능합니다.</p>
+              <input placeholder="전화번호를 입력해주세요" type="number" />
+              <p class="message">숫자만 입력 가능합니다.</p>
+              <input placeholder="키를 입력해주세요" type="number" />
+              <p class="message">3자리까지만 입력 가능합니다.</p>
+              <input placeholder="몸무게를 입력해주세요" type="number" />
+              <p class="message">3자리까지만 입력 가능합니다.</p>
+            </form>
+          </div>
 
-  #warnning>button {
-    width: 150px;
-    height: 50px;
-    margin-bottom: 30px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    background-color: rgb(236, 236, 236);
-    border: none;
-    border-radius: 10px;
-  }
+          <!-- 드롭다운 선택 -->
+          <div class="dropdown">
+            <!-- 활동량 선택 -->
+            <form class="activity">
+              <select>
+                <option>회원님의 일상적인 활동 수준을 선택해주세요.</option>
+                <option value="1.2">매우 약한 활동, 거의 움직이지않음</option>
+                <option value="1.375 ">
+                  가벼운 운동, 주로 앉아서 일하는 경우
+                </option>
+                <option value="1.55">보통의 활동 수준, 일반적인 사람들</option>
+                <option value="1.725">
+                  활발한 운동, 많은 활동을 하는 경우
+                </option>
+                <option value="1.9">매우 강도 높은 운동을 하는 경우</option>
+              </select>
+            </form>
+            <!-- 난이도 선택 -->
+            <form class="level">
+              <select>
+                <option>자신의 운동경력을 선택해주세요.</option>
+                <option value="입문">
+                  입문 수준 [운동을 시작한 경험이 전혀 없음]
+                </option>
+                <option value="초중급">
+                  초중급 수준 [운동 경력이 6개월 미만]
+                </option>
+                <option value="중급">중급 수준 [운동 경력이 1년~2년]</option>
+                <option value="고급">고급 수준 [운동 경력이 3년~이상]</option>
+              </select>
+            </form>
+          </div>
+          <!-- 남성 여성 -->
+          <form class="sex">
+            <div>남성</div>
+            <div>여성</div>
+          </form>
 
-  #warnning>button:hover {
-    box-shadow: rgb(131, 131, 131) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-  }
-</style>
-
-<body>
-  <main>
-    <div id="main-container">
-      <header>
-        <a href="/index.html">
-          <h1>MyCoach</h1>
-        </a>
-        <h2>회원가입</h2>
-      </header>
-      <div id="input-box">
-        <div>
-          <form class="name">
-            <input placeholder="이름을 입력해주세요" />
-            <input placeholder="사용하실 비밀번호를 입력해주세요" type="password" />
-            <input placeholder="나이를 입력해주세요" type="number" />
-            <p class="message">2자리까지만 입력 가능합니다.</p>
-            <input placeholder="전화번호를 입력해주세요" type="number" />
-            <p class="message">숫자만 입력 가능합니다.</p>
-            <input placeholder="키를 입력해주세요" type="number" />
-            <p class="message">3자리까지만 입력 가능합니다.</p>
-            <input placeholder="몸무게를 입력해주세요" type="number" />
-            <p class="message">3자리까지만 입력 가능합니다.</p>
+          <!-- 다이어트 목적 -->
+          <form class="Goal">
+            <div>
+              다이어트
+              <select id="diet">
+                <option>주에 감량하실 체중을 선택해주세요</option>
+                <option value="275">주 0.25kg 감량</option>
+                <option value="550">주 0.5kg 감량</option>
+                <option value="1095">주 1kg 감량</option>
+              </select>
+            </div>
+            <div>
+              근력운동
+              <select id="bulk">
+                <option>주에 증량하실 체중을 선택해주세요</option>
+                <option value="250">주 0.25kg 증량</option>
+                <option value="500">주 0.5kg 증량</option>
+              </select>
+            </div>
           </form>
         </div>
-
-        <!-- 드롭다운 선택 -->
-        <div class="dropdown">
-          <!-- 활동량 선택 -->
-          <form class="activity">
-            <select>
-              <option>회원님의 일상적인 활동 수준을 선택해주세요.</option>
-              <option value="1.2">매우 약한 활동, 거의 움직이지않음</option>
-              <option value="1.375 ">
-                가벼운 운동, 주로 앉아서 일하는 경우
-              </option>
-              <option value="1.55">보통의 활동 수준, 일반적인 사람들</option>
-              <option value="1.725">
-                활발한 운동, 많은 활동을 하는 경우
-              </option>
-              <option value="1.9">매우 강도 높은 운동을 하는 경우</option>
-            </select>
-          </form>
-          <!-- 난이도 선택 -->
-          <form class="level">
-            <select>
-              <option>자신의 운동경력을 선택해주세요.</option>
-              <option value="입문">
-                입문 수준 [운동을 시작한 경험이 전혀 없음]
-              </option>
-              <option value="초중급">
-                초중급 수준 [운동 경력이 6개월 미만]
-              </option>
-              <option value="중급">중급 수준 [운동 경력이 1년~2년]</option>
-              <option value="고급">고급 수준 [운동 경력이 3년~이상]</option>
-            </select>
-          </form>
-        </div>
-        <!-- 남성 여성 -->
-        <form class="sex">
-          <div>남성</div>
-          <div>여성</div>
-        </form>
-
-        <!-- 다이어트 목적 -->
-        <form class="Goal">
-          <div>
-            다이어트
-            <select id="diet">
-              <option>주에 감량하실 체중을 선택해주세요</option>
-              <option value="275">주 0.25kg 감량</option>
-              <option value="550">주 0.5kg 감량</option>
-              <option value="1095">주 1kg 감량</option>
-            </select>
-          </div>
-          <div>
-            근력운동
-            <select id="bulk">
-              <option>주에 증량하실 체중을 선택해주세요</option>
-              <option value="250">주 0.25kg 증량</option>
-              <option value="500">주 0.5kg 증량</option>
-            </select>
-          </div>
-        </form>
+        <footer>
+          <button id="recommend_program_button">운동 추천 받기</button>
+          <button id="complete">회원가입</button>
+        </footer>
       </div>
-      <footer>
-        <button id="recommend_program_button">운동 추천 받기</button>
-        <button id="complete">회원가입</button>
-      </footer>
-    </div>
-  </main>
+    </main>
 
-  <!-- program 선택창-->
-  <div id="recommend_program">
-    <div id="recommend_program_content">
-      <h1>MyCoach</h1>
-      <h3>입력하신 인적사항을 기반으로</h3>
-      <h3>최적의 운동 프로그램을 제안드리겠습니다.</h3>
+    <!-- program 선택창-->
+    <div id="recommend_program">
+      <div id="recommend_program_content">
+        <h1>MyCoach</h1>
+        <h3>입력하신 인적사항을 기반으로</h3>
+        <h3>최적의 운동 프로그램을 제안드리겠습니다.</h3>
+      </div>
     </div>
-  </div>
 
-  <!-- <div id="warnning_box">
-    <div id="warnning">
-      <button id="warnning_Check_btn">확인</button>
+    <div id="warnning_box">
+      <div id="warnning">
+        <p></p>
+        <button id="warnning_Check_btn">확인</button>
+      </div>
     </div>
-  </div> -->
-</body>
-<script src="sign_up.js"></script>
-
+  </body>
+  <script src="sign_up.js"></script>
 </html>

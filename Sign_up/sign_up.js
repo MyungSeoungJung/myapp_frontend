@@ -29,8 +29,13 @@ function creatProgram(
       <div class="program_container" data-program="${programGoal} data-level="${programLevel}"> 
        <div class="img"><img src="${img}"></div>
           <div class = "text">
-            <div class="title">${programTitle}</div>
-              <div class="content">${programIntro}</div>
+            <div class="title"> <div class ="program_title">${programTitle}</div>
+            <div class ="tag"><button id ="goal_tag">${programGoal} 
+            </button> <button id ="level_tag">${programLevel} </button>
+            </div>
+            </div>
+              <div class="content">${programIntro}
+              </div>
                </div>
                  </div>
                    </div>
@@ -110,7 +115,7 @@ Goal.forEach((item) => {
         dietDropBox.style.display = "none";
       });
     } else if (e.target == Goal[1]) {
-      usergoal = "근력운동";
+      usergoal = "근력증가";
       bulkDropBox.style.display = "block";
       bulkDropBox.addEventListener("change", () => {
         GoalCal = bulkDropBox.value;
@@ -136,38 +141,49 @@ complete.style.display = "none";
 
 // -------------운동 추천 받기 클릭시 추천 프로그램 띄움----------------------------
 recommend_program.style.display = "none";
-// warnning_box.style.display = "none";
+warnning_box.style.display = "none";
 
 recommend_program_btn.addEventListener("click", async () => {
   // 입력폼 경고창 띄우기
-  const all_input = document.querySelectorAll("input");
-  const warnnig_text = document.querySelector("#warnning");
+  const all_input = document.querySelectorAll("input"); //회원가입 모든 인풋
   const warnning_box = document.querySelector("#warnning_box");
   const warnning_Check_btn = document.querySelector("#warnning_Check_btn");
 
   let foundEmptyField = false; // 빈 필드를 찾았는지 여부를 추적하는 변수
 
+  // 모든 입력사항이 작성이 안되어있으면 경고창 띄우기
   for (const item of all_input) {
-    if (!item.value || item.value.trim() === "") {
-      // warnning_box.style.display = "block";
-      alert(`${item.placeholder}`)
+    if (
+      !item.value ||
+      item.value.trim() === "" ||
+      usergoal == "" ||
+      userActivity == "" ||
+      usersex == "" ||
+      userLevel == "" ||
+      GoalCal == ""
+    ) {
+      warnning_box.style.display = "block";
+      // alert(`${item.placeholder}`)
       foundEmptyField = true;
       break; // 빈 필드를 찾았으므로 루프 종료
     }
   }
-  if (!foundEmptyField) {  // 빈 필드가 없으면
+  if (!foundEmptyField) {
+    // 빈 필드가 없으면
     recommend_program.style.display = "block"; // 추천프로그램창 표시
-    complete.style.display = "block";  // 회원가입 제출 버튼 표시
+    complete.style.display = "block"; // 회원가입 제출 버튼 표시
     recommend_program_btn.style.display = "none"; // 추천프로그램 받기 버튼 숨김
   }
 
-  // warnning_Check_btn.addEventListener("click", (e) => {
-  //   e.preventDefault();
-  //   warnning_box.style.display = "none";
-  // });
+  const warnnig_text = document.querySelector("#warnning > p");
+  warnnig_text.textContent = "모든 인적사항을 입력해주세요";
+  warnning_Check_btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    warnning_box.style.display = "none";
+  });
   // ----------------------------------------------------------------------------------------------------
   const response = await fetch(
-    "http://localhost:8080/program/recommendProgram"
+    `http://localhost:8080/program/recommendProgram?goal=${usergoal}`
   );
   const result = await response.json();
   let count = 0;
@@ -197,7 +213,7 @@ recommend_program_content.addEventListener("click", (e) => {
   // 추천 운동프로그램 띄우기
   const programContainer = e.target.closest(".program_container");
   if (programContainer) {
-    title = programContainer.querySelector(".title").textContent; //클릭시 클릭한 운동 프로그램 value 선택
+    title = programContainer.querySelector(".program_title").textContent; //클릭시 클릭한 운동 프로그램 value 선택
     recommend_program_content.style.display = "none";
 
     const complete_alert = document.createElement("div"); // div만들어서 알림창 띄우기
@@ -285,24 +301,12 @@ function ageInput(e) {
   }
 }
 
-
 // const all_input = document.querySelectorAll("input");
-// const warnnig_text = document.querySelector("#warnning");
+// const warnnig_text = document.querySelector("#warnning > p");
 // const warnning_box = document.querySelector("#warnning_box");
 // const warnning_Check_btn = document.querySelector("#warnning_Check_btn");
 // warnning_box.style.display = "none";
-// all_input.forEach(item => {
-
-//   if (item.value == "null") {
-//     warnning_box.style.display = "block";
-
-//     const p = document.createElement("p")
-//     p = `
-//     <p> 입력해주세요 </p>
-//     `
-//   }
-//   warnning_Check_btn.addEventListener("click", () => {
-//     warnning_box.style.display = "none";
-
-//   })
+// warnnig_text.textContent = "모든 인적사항을 입력해주세요";
+// warnning_Check_btn.addEventListener("click", () => {
+//   warnning_box.style.display = "none";
 // });

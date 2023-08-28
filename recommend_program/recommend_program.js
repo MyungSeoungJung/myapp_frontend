@@ -25,6 +25,7 @@ function creatProgram(
         <div class = "text">
           <div class="title">${programTitle}</div>
             <div class="content">${programIntro}</div>
+
              </div>
                </div>
                  </div>
@@ -73,7 +74,7 @@ recommend_program_content.addEventListener("click", (e) => {
   e.preventDefault();
   const programContainer = e.target.closest(".program_container");
   if (programContainer) {
-    const title = programContainer.querySelector(".title").textContent; //클릭시 클릭한 운동 프로그램 value 선택
+    const title = programContainer.querySelector(".program_title").textContent; //클릭시 클릭한 운동 프로그램 value 선택
 
     recommend_program_content.style.display = "none";
     const complete_alert = document.createElement("div"); // div만들어서 알림창 띄우기
@@ -81,7 +82,7 @@ recommend_program_content.addEventListener("click", (e) => {
     complete_alert.classList = "complete_alert";
     complete_alert.innerHTML = `
       <p>축하합니다! </p>
-      <p>선택하신 운동 프로그램은 <strong>${title}</strong>입니다.</p>
+      <p>선택하신 운동 프로그램은<strong>${title}입니다</strong>입니다.</p>
       <p>사용자 정보 갱신을 위해 다시 로그인해주세요</p>
      <div> <button id ='complete_alert_button'> 로그인 페이지로 이동 </button> </div>`;
 
