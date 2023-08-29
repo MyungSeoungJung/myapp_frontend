@@ -17,7 +17,10 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 />
+<link rel="stylesheet" href="/user_page/modal_box.css">
 <link rel="stylesheet" href="/scroll_event/scroll_event.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
   <title>Document</title>
 </head>
 <style>
@@ -180,8 +183,10 @@ main {
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  position: absolute;
 }
    #content_container {
+    margin-top: 50px;
     width: 100%;
     height: 500px;
     /* background-color: red; */
@@ -238,10 +243,23 @@ main {
     height: 100%;
     text-align: center;
    }
-  
+   #my_posts > table td:nth-of-type(2){
+    width: 400px;
+    max-width: 400px; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   }
+   #my_posts > table td{
+    font-size: 1.2rem;
+   }
+   #my_posts > table > thead {
+    background-color: rgb(228, 228, 228);
+    font-size: 1.2rem;
+   }
    .modify{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;    border: none;
-    height: 100%;
+    height: 30px;
     width: 50px;
     background-color: rgb(206, 206, 206);
     border-radius: 5px;
@@ -253,7 +271,7 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
     background-color: rgb(206, 206, 206);
     border-radius: 5px;
    }
-</style>
+   </style>
 <body>
   <header>
     <div class="header-wrapper">
@@ -272,7 +290,7 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
   <div id="top_banner">
     <div id="video_container">
     <video id="fullscreen-video" autoplay loop muted>
-      <source src="/img/video/my_exercise.mp4" type="video/mp4" />
+      <source src="/img/video/user_page.mp4" type="video/mp4" />
   </div>
     <div id="nav_contain">
       <nav id="nav">
@@ -364,8 +382,21 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
     </table>
   </div>
     </div>
-
   </main>
+  </div>
+  <!-- 모달창 -->
+  <div id ="modal_box_container">
+    <div id = "modal_box">
+      <div>
+        <div>123</div>
+        <p>게시물 수정하기</p>
+        <div> <i class="fa-solid fa-x"></i></div>
+      </div>
+      <div> 제목 :<input type="text" id="modal_title"></div>
+      <div> 내용 :<textarea id ="modal_textarea"></textarea></div>
+  <div><button id="modal_wrtie_btn">작성</button>
+  </div>
+    </div>
   </div>
 </body>
 

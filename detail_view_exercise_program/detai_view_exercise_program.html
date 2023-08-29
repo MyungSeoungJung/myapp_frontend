@@ -15,37 +15,27 @@
 =Dancing+Script:wght@700&family=Noto+Sans+KR:wght@800&display=swap"
       rel="stylesheet"
     />
-
+    <link rel="stylesheet" href="/scroll_event/scroll_event.css" />
     <title>Document</title>
   </head>
   <style>
-    * {
+   
+   * {
       font-size: 14px;
-      font-family: "Noto Sans KR", sans-serif;
+      font-family: 'Noto Sans KR', sans-serif;
     }
+
     h1 {
       font-family: "Dancing Script", cursive;
       font-size: 2rem;
     }
+
     body {
       box-sizing: border-box;
       margin: 0;
       padding: 0 auto;
     }
 
-    #logout {
-      background-color: #0d0c22;
-      border: none;
-      color: white;
-      width: 100px;
-      height: 50px;
-      text-align: center;
-      border-radius: 10px;
-      align-items: center;
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-    }
     /* -------------------------top_banner----------------------- */
     a {
       color: white;
@@ -56,55 +46,23 @@
       text-decoration: none;
       color: inherit;
     }
-    header {
-      width: 100vw;
-      height: 100px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .header-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 0 20px;
-    }
-
-    #header-right {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    header h1 {
-      margin-left: 110px;
-    }
-
-    header #logout {
-      margin-left: 20px;
-    }
 
     #top_banner {
       width: 100%;
-      background-color: rgb(170, 170, 170);
-      height: 500px;
+      /* background-color: rgb(170, 170, 170); */
+      height: 600px;
       display: flex;
       flex-direction: column;
-    }
-
-    #top_banner #top_banner_text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-top: 200px;
     }
 
     /* 네비게이션 ------------------------------------------------*/
     #nav_contain {
       display: flex;
+      width: 100%;
       justify-content: center;
+      position: absolute;
+      z-index: 1;
+      align-items: center;
     }
 
     nav {
@@ -113,10 +71,41 @@
       background-color: black;
       height: 80px;
       color: white;
-      width: 97.5vw;
-      justify-content: space-between;
+      width: 95%;
       align-items: center;
+      justify-content: space-between;
       margin-top: 25px;
+    }
+    #video_container {
+
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+    }
+    #fullscreen-video {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.4) contrast(1);
+    }
+
+    #top_banner_text {
+      width: 100%;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 280px;
+      z-index: 5;
+      color: white;
+    }
+    #top_banner_text p {
+      font-weight: 900;
+    font-size: 1.4rem;
     }
 
     #nav_item {
@@ -130,13 +119,67 @@
     nav h1 {
       margin-left: 30px;
     }
+
+    header {
+     width: 100vw;
+     height: 100px;
+     display: flex;
+     justify-content: center;
+   }
+   .header-wrapper {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     width: 100%;
+     padding: 0 20px;
+   }
+
+   #header-right {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+
+   header h1 {
+     margin-left: 110px;
+   }
+
+   header #logout {
+     margin-left: 20px;
+   }
+
+   #logout {
+     background-color: #0d0c22;
+     border: none;
+     color: white;
+     width: 100px;
+     height: 50px;
+     text-align: center;
+     border-radius: 10px;
+     align-items: center;
+     justify-content: center;
+     display: flex;
+     flex-direction: column;
+   }
+
+   #logout:hover {
+     opacity: 0.7;
+   }
+
+   #logout span {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+   }
+
     #main_container {
       width: 100vw;
       height: 100%;
       display: flex;
       justify-content: center;
       /* flex-direction: column; */
-      margin-top: 100px;
+      /* margin-top: 100px; */
       margin-bottom: 100px;
     }
 
@@ -405,6 +448,10 @@
       </div>
     </header>
     <div id="top_banner">
+      <div id="video_container">
+      <video id="fullscreen-video" autoplay loop muted>
+        <source src="/img/video/my_exercise .mp4" type="video/mp4" />
+    </div>
       <div id="nav_contain">
         <nav id="nav">
           <div>
@@ -442,16 +489,21 @@
       </div>
       <!-- nav_contain  -->
     </div>
+  
+    <!-- 글자 애니메이션 -->
+    <div class="container">
+      <p class="hidden" id="program_title"></p>
+    </div>
+    <!-- 메인 컨테이너 -->
     <div id="main_container">
       <div id="main_wrapper">
-        <div id="my_exercise_title">내가 선택한 프로그램</div>
         <div id="top">
           <div id="img"></div>
           <div></div>
         </div>
         <div id="bottom">
           <div id="left">
-            <div id="program_title"></div>
+            <!-- <div id="program_title"></div> -->
             <div id="program_intro"></div>
           </div>
           <div id="right">
@@ -1371,4 +1423,5 @@
   <script src="/main_page/auth.js"></script>
   <script src="/main_page/log_out.js"></script>
   <script src="/main_page/get_name.js"></script>
+  <script src="/scroll_event/scroll_event.js"></script>
 </html>

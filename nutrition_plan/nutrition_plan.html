@@ -15,6 +15,7 @@ href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family
 =Dancing+Script:wght@700&family=Noto+Sans+KR:wght@800&display=swap"
 rel="stylesheet"
 />
+<link rel="stylesheet" href="/scroll_event/scroll_event.css">
   <title>영양계획</title>
 </head>
 <style>
@@ -40,7 +41,7 @@ rel="stylesheet"
   <div id="top_banner">
     <div id="video_container">
     <video id="fullscreen-video" autoplay loop muted>
-      <source src="/img/video/my_exercise.mp4" type="video/mp4" />
+      <source src="/img/video/nutrition.mp4" type="video/mp4" />
   </div>
     <div id="nav_contain">
       <nav id="nav">
@@ -71,15 +72,17 @@ rel="stylesheet"
     </div>
     <div id="top_banner_text">
       <p>
-        귀하의 개인정보를 바탕으로      </p>
+        귀하의 인적사항을 바탕으로      </p>
       <p>
 권장되는 3대 영 양소 섭취량을 안내해 드리겠습니다 </p>
     </div>
     <!-- nav_contain  -->
   </div>
 
-
-
+  <!-- 글자 애니메이션 -->
+  <div class="container">
+    <p class="hidden">NUTRITION PLAN</p>
+  </div>
 
   <!-- 먹어야 될 칼로리 -->
   <section>
@@ -128,7 +131,5 @@ rel="stylesheet"
 <script src="nutrition_plan.js"></script>
 <script src="/main_page/log_out.js"></script>
 <script src="/main_page/auth.js"></script>
-<script>
-
-</script>
+<script src="/scroll_event/scroll_event.js"></script>
 </html>

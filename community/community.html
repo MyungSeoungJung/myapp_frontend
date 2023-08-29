@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
+    <link rel="stylesheet" href="/scroll_event/scroll_event.css">
     <title>Document</title>
   </head>
   <style>
@@ -186,6 +186,13 @@
       height: 100%;
       text-align: center;
      }
+     #table_container > table td:nth-of-type(2){
+    width: 400px;
+    max-width: 400px; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   }
      #community_title{
       background-color: black;
       color: white;
@@ -239,18 +246,20 @@
       color: white;
      }
      #modal_box {
-      position: relative;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      flex-direction: column;
-      width: 600px;
-      height: 600px;
-      background-color: rgb(255, 255, 255);
-      align-items: center;
-      border-radius: 10px;
-     }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 60%; /* 수정한 부분 */
+  max-width: 600px; /* 추가한 부분 */
+  height: 80%; /* 수정한 부분 */
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
      #modal_box > div:nth-of-type(1){
       flex: 0.1;
       background-color: rgb(0, 0, 0);
@@ -258,6 +267,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
      }
      #modal_box > div:nth-of-type(1) > div:nth-of-type(n) {
       height: 100%;
@@ -322,12 +333,14 @@
       background-color: rgb(202, 202, 202);
      }
      #modal_box_container {
-      position: absolute;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgb(0, 0, 0, 0.7);
-      z-index: 10;
-     }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
   </style>
   <body>
     <header>
@@ -348,7 +361,7 @@
     <div id="top_banner">
       <div id="video_container">
       <video id="fullscreen-video" autoplay loop muted>
-        <source src="/img/video/my_exercise.mp4" type="video/mp4" />
+        <source src="/img/video/community.mp4" type="video/mp4" />
     </div>
       <div id="nav_contain">
         <nav id="nav">
@@ -379,14 +392,19 @@
       </div>
       <div id="top_banner_text">
         <p>
-          저희는 정교하게 구성된 운동 프로그램을 제공하여 목표 달성을 지원하며
+          저희는 폭넓은 범위의 소식과 정보를 제공하여
         </p>
         <p>
-          운동의 다양한 영역에서 뛰어난 성과를 이루실 수 있도록 돕고자 합니다.
+        여러분께 다양한 영역에서 귀중한 정보를 소중히 공유하고자 합니다
         </p>
       </div>
       <!-- nav_contain  -->
     </div>
+
+  <!-- 글자 애니메이션 -->
+  <div class="container">
+    <p class="hidden">COMMUNITY</p>
+  </div>
 
     <!-- 메인 영역 -->
     <main>
@@ -448,4 +466,5 @@
   <script src="/main_page/auth.js"></script>
   <script src="/main_page/log_out.js"></script>
   <script src="/main_page/get_name.js"></script>
+  <script src="/scroll_event/scroll_event.js"></script>
   </html>

@@ -12,6 +12,7 @@
 =Dancing+Script:wght@700&family=Noto+Sans+KR:wght@800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/scroll_event/scroll_event.css">
     <title>Document</title>
   </head>
 
@@ -123,7 +124,7 @@
       display: flex;
       justify-content: center;
       /* flex-direction: column; */
-      margin-top: 100px;
+      margin-top: 50px;
       margin-bottom: 200px;
     }
 
@@ -333,7 +334,7 @@
     <div id="top_banner">
       <div id="video_container">
       <video id="fullscreen-video" autoplay loop muted>
-        <source src="/img/video/my_exercise.mp4" type="video/mp4" />
+        <source src="/img/video/my_work.mp4" type="video/mp4" />
     </div>
       <div id="nav_contain">
         <nav id="nav">
@@ -373,6 +374,10 @@
       <!-- nav_contain  -->
     </div>
 
+  <!-- 글자 애니메이션 -->
+  <div class="container">
+    <p class="hidden">MY EXERCISE PROGRAM</p>
+  </div>
 
     <main>
       <div id="main_container">
@@ -1284,4 +1289,5 @@
   <script src="my_exercise.js"></script>
   <script src="/main_page/log_out.js"></script>
   <script src="/main_page/auth.js"></script>
+  <script src="/scroll_event/scroll_event.js"></script>
 </html>

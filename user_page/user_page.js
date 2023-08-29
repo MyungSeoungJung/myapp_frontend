@@ -34,7 +34,7 @@ function getCookie(name) {
   );
   return matches ? decodeURIComponent(matches[1]) : undefined;
 }
-
+// 내가 작성한 게시판 가져오기
 (async () => {
   const name = document.querySelector("#name");
   const age = document.querySelector("#age");
@@ -86,15 +86,17 @@ const modify_btn = document.querySelectorAll(".modify");
 const delete_btn = document.querySelectorAll(".delete");
 
 // 버튼이 동적으로 생성되기때문에 DOM이 다 Loaded되고
+// 삭제 이벤트
 document.addEventListener("DOMContentLoaded", () => {
   const tbody = document.querySelector("#myPosts_body");
 
   tbody.addEventListener("click", async (e) => {
+    e.preventDefault();
+
     const target = e.target;
 
     // 클릭된 요소가 "delete" 클래스를 가지고 있는지 확인
     if (target.classList.contains("delete")) {
-      e.preventDefault();
       const tr = target.parentElement.parentElement;
       const no = tr.dataset.no;
 
@@ -110,5 +112,56 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       tr.remove();
     }
+  });
+});
+
+// x박스 클릭시 모달창 닫기
+const x_box = document.querySelector(".fa-solid");
+const modal_box = document.querySelector("#modal_box_container");
+const modal_wrtie_btn = document.querySelector("#modal_wrtie_btn");
+x_box.addEventListener("click", () => {
+  modal_box.style.display = "none";
+});
+modal_box.style.display = "none";
+
+// 수정 버튼 클릭시 모달박스 띄우기
+document.addEventListener("DOMContentLoaded", () => {
+  const tbody = document.querySelector("#myPosts_body");
+  tbody.addEventListener("click", async (e) => {
+    e.preventDefault();
+    if (e.target.classList.contains("modify")) {
+      modal_box.style.display = "block";
+    }
+    const target = e.target;
+    const tr = target.parentElement.parentElement;
+    const no = tr.dataset.no; // 게시물 넘버
+    const td = tr.querySelectorAll("td"); //게시물 td 접근
+    const modal_title = document.querySelector("#modal_title");
+    const modal_textarea = document.querySelector("#modal_textarea");
+
+    modal_title.value = td[0].textContent;
+    modal_textarea.value = td[1].textContent;
+
+    // 작성버튼 클릭시 서버 보내기
+    modal_wrtie_btn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const response = await fetch(
+        `http://localhost:8080/posts/modifyPost?no=${no}`,
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${getCookie("token")}`,
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            title: modal_title.value,
+            content: modal_textarea.value,
+          }),
+        }
+      );
+      td[0].textContent = modal_title.value;
+      td[1].textContent = modal_textarea.value;
+      modal_box.style.display = "none";
+    });
   });
 });

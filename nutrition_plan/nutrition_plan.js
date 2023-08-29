@@ -1,6 +1,7 @@
 const calorie = document.querySelector("#Calorie");
 const macro_gram = document.querySelectorAll(".macro");
 console.log(calorie);
+
 function getCookie(name) {
   let matches = document.cookie.match(
     new RegExp(
@@ -15,7 +16,7 @@ function getCookie(name) {
 (() => {
   const token = getCookie("token");
 })();
-
+// 매크로 계산식
 (async () => {
   const response = await fetch("http://localhost:8080/user/main", {
     headers: {
@@ -36,7 +37,7 @@ function getCookie(name) {
     basicCal = bmr * user.activity;
   }
   // 일일 목표 칼로리
-  if (user.userChoiceGoal == "근력운동") {
+  if (user.userChoiceGoal == "근력증가") {
     targetCal = basicCal + user.goalCal;
   } else if (user.userChoiceGoal == "다이어트") {
     targetCal = basicCal - user.goalCal;
