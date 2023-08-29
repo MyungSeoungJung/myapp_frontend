@@ -278,7 +278,7 @@ function height_input(e) {
   const letter = e.target.value;
   const message1 = e.target.nextElementSibling;
   if (letter.length > 3) {
-    e.target.value = letter.slice(0, 4);
+    e.target.value = letter.slice(0, 3);
     // e.target.style.borderColor = "red";
     message1.style.display = "block"; // p 태그 보이기
   } else {
@@ -292,7 +292,7 @@ function ageInput(e) {
   const letter = e.target.value;
   const message = e.target.nextElementSibling;
   if (letter.length > 2) {
-    e.target.value = letter.slice(0, 3);
+    e.target.value = letter.slice(0, 2);
     // e.target.style.borderColor = "red";
     message.style.display = "block"; // p 태그 보이기
   } else {

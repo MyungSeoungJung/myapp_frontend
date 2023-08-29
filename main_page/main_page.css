@@ -16,11 +16,15 @@
 
    a {
      text-decoration: none;
+     
    }
 
    a:visited {
      text-decoration: none;
      color: inherit;
+   }
+   #header-right > a{
+    color: black;
    }
 
    /* ---------------------------헤더 네비------------------- */
@@ -52,13 +56,18 @@
    header #logout {
      margin-left: 20px;
    }
-
+   header p {
+    color: white;
+    z-index: 10;
+   }
    /* ---------------------------banner------ul---------------- */
    #banner {
      width: 100vw;
      height: 600px;
      display: flex;
-     justify-content: center;
+     /* justify-content: center; */
+     align-items: center;
+     flex-direction: column;
    }
 
    div ul {
@@ -72,7 +81,16 @@
      margin-top: 70px;
      margin-right: 50px;
    }
-
+   #banner_text{
+    position: absolute;
+    margin-top: 290px;
+    color: white;
+    text-align: center;
+   }
+   #banner_text p {
+    font-size: 1.4rem;
+   }
+   
    #fullscreen-video {
      position: relative;
      top: 0;

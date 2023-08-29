@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+  href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Noto+Sans+KR:wght@800&display=swap"
+  rel="stylesheet"
+/>
+<link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family
+=Dancing+Script:wght@700&family=Noto+Sans+KR:wght@800&display=swap"
+    rel="stylesheet"
+  />
+  <!-- 애니메이션 링크 -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<link rel="stylesheet" href="/scroll_event/scroll_event.css">
+  <title>Document</title>
+</head>
+<style>
+    
+    * {
+      font-size: 14px;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    h1 {
+      font-family: "Dancing Script", cursive;
+      font-size: 2rem;
+    }
+
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0 auto;
+    }
+
+    /* -------------------------top_banner----------------------- */
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    #top_banner {
+      width: 100%;
+      /* background-color: rgb(170, 170, 170); */
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 네비게이션 ------------------------------------------------*/
+    #nav_contain {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      position: absolute;
+      z-index: 1;
+      align-items: center;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      background-color: black;
+      height: 80px;
+      color: white;
+      width: 95%;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+    #video_container {
+
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+    }
+    #fullscreen-video {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.4) contrast(1);
+    }
+
+    #top_banner_text {
+      width: 100%;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 280px;
+      z-index: 5;
+      color: white;
+    }
+    #top_banner_text p {
+      font-weight: 900;
+    font-size: 1.4rem;
+    }
+
+    #nav_item {
+      display: flex;
+      width: 700px;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 100px;
+    }
+
+    nav h1 {
+      margin-left: 30px;
+    }
+
+    header {
+     width: 100vw;
+     height: 100px;
+     display: flex;
+     justify-content: center;
+   }
+   .header-wrapper {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     width: 100%;
+     padding: 0 20px;
+   }
+
+   #header-right {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+
+   header h1 {
+     margin-left: 110px;
+   }
+
+   header #logout {
+     margin-left: 20px;
+   }
+
+   #logout {
+     background-color: #0d0c22;
+     border: none;
+     color: white;
+     width: 100px;
+     height: 50px;
+     text-align: center;
+     border-radius: 10px;
+     align-items: center;
+     justify-content: center;
+     display: flex;
+     flex-direction: column;
+   }
+
+   #logout:hover {
+     opacity: 0.7;
+   }
+
+   #logout span {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+   }
+/* 메인 영역 */
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+   #content_container {
+    width: 100%;
+    height: 500px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+   }
+   #content{
+    width: 30%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 10px;
+   }
+   #content > div > h2 {
+    font-size: 2rem;
+   }
+
+   #user_table {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+   }
+   #user_table td{
+    font-size: 1.4rem;
+    border-bottom: 1px solid gray;
+   }
+   /* 게시물 테이블 */
+   #my_posts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+
+   }
+   #my_posts > p{
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    width: 80%;
+    font-size: 2rem;
+   }
+   #my_posts > table {
+    width: 80%;
+    height: 100%;
+    text-align: center;
+   }
+  
+   .modify{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;    border: none;
+    height: 100%;
+    width: 50px;
+    background-color: rgb(206, 206, 206);
+    border-radius: 5px;
+   }
+   .delete{
+box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;    border: none;
+    height: 30px;
+    width: 50px;
+    background-color: rgb(206, 206, 206);
+    border-radius: 5px;
+   }
+</style>
+<body>
+  <header>
+    <div class="header-wrapper">
+      <div>
+        <!-- 타이틀 가운데 넣기위한 div태그 -->
+      </div>
+      <div>
+        <h1>MyCoach</h1>
+      </div>
+      <div id="header-right">
+        <div id="username"></div>
+        <div id="logout">LOGOUT</div>
+      </div>
+    </div>
+  </header>
+  <div id="top_banner">
+    <div id="video_container">
+    <video id="fullscreen-video" autoplay loop muted>
+      <source src="/img/video/my_exercise.mp4" type="video/mp4" />
+  </div>
+    <div id="nav_contain">
+      <nav id="nav">
+        <div>
+          <a href="/main_page/main.html">
+            <h1>My Coach</h1>
+          </a>
+        </div>
+        <div id="nav_item">
+          <a href="/nutrition_plan/nutrition_plan.html">
+            <div>영양 계획</div>
+          </a>
+          <a href="/my_exercise/my_exercise.html">
+            <div>나의 운동</div>
+          </a>
+          <a href="/exercise_program/exercise_program.html">
+            <div>운동 프로그램</div>
+          </a>
+          <a href="/community/community.html">
+            <div>커뮤니티</div>
+          </a>
+          <a href="/introduction _coaches/introduction _coaches.html">
+            <div>코치 소개</div>
+          </a>
+        </div>
+        <div><!-- 위치조정 위한 div 태그 --></div>
+      </nav>
+    </div>
+    <div id="top_banner_text">
+      <p>
+        MY PAGE
+      </p>
+  
+    </div>
+    <!-- nav_contain  -->
+  </div>
+
+  <!-- 글자 애니메이션 -->
+  <div class="container">
+    <p class="hidden">My Page</p>
+  </div>
+
+  <!-- 메인영역 -->
+  <main>
+    <!-- 테이블 -->
+    <div id="content_container">
+      <!-- 유저 정보 테이블 -->
+      <div id="content">
+          <div><h2>유저 정보</h2></div>
+        <table id="user_table">
+          <tr>
+            <td>이름</td>
+            <td id="name"></td>
+          </tr>
+          <tr>
+            <td>나이</td>
+            <td id="age"></td>
+          </tr>
+          <tr>
+            <td>키</td>
+            <td id="height"></td>
+          </tr>
+          <tr>
+            <td>몸무게</td>
+            <td id="weight"></td>
+          </tr>
+          <tr>
+            <td>선택한 프로그램</td>
+            <td id="program"></td>
+          </tr>
+
+        </table>
+      </div>
+      
+      <!-- 포스트 테이블 -->
+    <div id="my_posts">
+      <p>내가 작성한 게시물</p>
+    <table>
+      <thead>
+        <th>제목</th>
+        <th>내용</th>
+        <th>일시</th>
+        <th>댓글</th>
+        <th>수정</th>
+        <th>삭제</th>
+      </thead>
+      <tbody id="myPosts_body">
+      </tbody>
+    </table>
+  </div>
+    </div>
+
+  </main>
+  </div>
+</body>
+
+<script src="/scroll_event/scroll_event.js"></script>
+<script src="user_page.js"></script>
+<script src="/main_page/auth.js"></script>
+<script src="/main_page/log_out.js"></script>
+<script src="/main_page/get_name.js"></script>
+</html>

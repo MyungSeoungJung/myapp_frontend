@@ -318,12 +318,26 @@
       width: 500px;
       height: 100px;
       flex: 1;
-      /* margin-left: 50px; */
+      border-radius: 10px;
+      /* background-color: rgb(236, 236, 236); */
+      padding: 10px;
+      border: none;
+      outline: none;
+      background-color: rgb(226, 226, 226);
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     }
     #write_comment_wrapper button {
       width: 200px;
       margin-left: 10px;
-      height: 100px;
+      height: 120px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      background-color: white;
+      border: none;
+      border-radius: 10px;
     }
     #write_comment_wrapper > div {
       display: flex;
@@ -1342,7 +1356,10 @@
         <div id="write_comment">
           <div id="write_comment_wrapper">
             <div>
-              <textarea id="comment"></textarea>
+              <textarea
+                id="comment"
+                placeholder="댓글을 작성해주세요"
+              ></textarea>
               <button id="submit">제출</button>
             </div>
           </div>
