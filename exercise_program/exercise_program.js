@@ -8,6 +8,7 @@ function creatLi(
 ) {
   const li = document.createElement("li");
   li.dataset.goal = programGoal;
+  li.dataset.no = id;
   li.innerHTML = `
   <div id = "li_cotainer">
   <div id="top" data-no="${id}">
@@ -192,14 +193,20 @@ function setBtnActive() {
 })(); // 즉시
 
 const ul = document.querySelector("ul");
-ul.addEventListener("click", async (e) => {
-  e.preventDefault();
-  // 클릭한 객체 no값 추출
-  const id = e.target.parentElement.parentElement.dataset.no;
-  console.log(id);
-  // 이동 시킬떼 뒤에 id=${id} 파라미터 붙게끔 이동
-  window.location.href = `/detail_view_exercise_program/detai_view_exercise_program.html?id=${id}`;
+
+ul.addEventListener("click", (e) => {
+  const clickedElement = e.target;
+
+  // 클릭한 요소가 <li>의 자손이라면
+  if (clickedElement.closest("li")) {
+    const li = clickedElement.closest("li");
+    const id = li.dataset.no; // li 요소의 dataset.no 값을 추출
+    console.log(id);
+    // 이동 시킬 때 뒤에 id=${id} 파라미터 붙게끔 이동
+    window.location.href = `/detail_view_exercise_program/detai_view_exercise_program.html?id=${id}`;
+  }
 });
+
 // const inputElement = document.getElementById("#search_input");
 
 // const searchInput = document.getElementById("search_input");

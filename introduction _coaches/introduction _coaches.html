@@ -12,6 +12,12 @@
 =Dancing+Script:wght@700&family=Noto+Sans+KR:wght@800&display=swap"
     rel="stylesheet"
   />
+      <!-- 아이태그 -->
+      <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  <link rel="stylesheet" href="/scroll_event/scroll_event.css">
   <title>Document</title>
 </head>
 <style>
@@ -168,6 +174,55 @@
      justify-content: center;
      height: 100%;
    }
+   main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px;
+   }
+   ul {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* background-color: red; */
+   }
+   li {
+    width: 250px;
+    /* background-color: red; */
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    height: 330px;
+    margin-right: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+   }
+   .li_cotainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   }
+   .li_cotainer img{
+    width: 100%;
+    height: 200px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+   }
+   #coach_container{
+    width: 90%;
+    height: 100%;
+    /* background-color: red; */
+    
+  
+   }
+   .bottom{
+    padding-left: 10px;
+    width: 100%;
+    height: 100px;
+   }
 
 </style>
 <body>
@@ -227,8 +282,156 @@
     </div>
     <!-- nav_contain  -->
   </div>
+  
+  
+  <!-- 글자 애니메이션 -->
+  <div class="container">
+    <p class="hidden">INTRODUCTION COACH</p>
+  </div>
 
+  <main>
+    <div id="coach_container">
+        <ul>
+          <li>
+          <div class = "li_cotainer">
+            <div class="top">
+            <div><img width="auto" height="30" src="/img/coach/Bryce Lewis.jpg"></div>
+            </div>
+            <div class = "bottom">
+            <p>Bryce Lewis
+            </p>
+            <p>3x Champion Powerlifter, Elite-level Coach</p>
+            </div>
+            </div>
+          </li>
+
+          <li>
+            <div class = "li_cotainer">
+              <div class="top">
+              <div><img width="auto" height="30" src="/img/coach/Alec Chen.jpg"></div>
+              </div>
+              <div class = "bottom">
+              <p>Alec Chen
+              </p>
+              <p>Evidence - Based Strength Coach</p>
+              </div>
+              </div>
+            </li>
+          <li>
+            <div class = "li_cotainer">
+              <div class="top">
+              <div><img width="auto" height="30" src="/img/coach/Brandon Campbell.jpg"></div>
+              </div>
+              <div class = "bottom">
+              <p>Brandon Campbell
+              </p>
+              <p>Sports performance at Kansas Basketball, former NBA strength coach</p>
+              </div>
+              </div>
+            </li>
+
+            <li>
+              <div class = "li_cotainer">
+                <div class="top">
+                <div><img width="auto" height="30" src="/img/coach/Dr.Swole.jpg"></div>
+                </div>
+                <div class = "bottom">
+                <p>Dr. Swole
+                </p>
+                <p>Science-based Natural Bodybuilding</p>
+                </div>
+                </div>
+              </li>
+
+              <li>
+                <div class = "li_cotainer">
+                  <div class="top">
+                  <div><img width="auto" height="30" src="/img/coach/Geoffrey Verity.jpeg"></div>
+                  </div>
+                  <div class = "bottom">
+                  <p>Geoffrey Verity
+                  </p>
+                  <p>Writer. Coach. Brofessor.</p>
+                  </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class = "li_cotainer">
+                    <div class="top">
+                    <div><img width="auto" height="30" src="/img/coach/Mark Rosenberg.jpg"></div>
+                    </div>
+                    <div class = "bottom">
+                    <p>Mark Rosenberg
+                    </p>
+                    <p>Egolympics Gold Medalist</p>
+                    </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class = "li_cotainer">
+                      <div class="top">
+                      <div><img width="auto" height="30" src="/img/coach/Rebecca Rouse.jpg"></div>
+                      </div>
+                      <div class = "bottom">
+                      <p>Rebecca Rouse
+                      </p>
+                      <p>Functional Strength Coach, YouTuber
+                      </p>
+                      </div>
+                      </div>
+                    </li>
+                    
+                  <li>
+                    <div class = "li_cotainer">
+                      <div class="top">
+                      <div><img width="auto" height="30" src="/img/coach/GregNuckols.jpg"></div>
+                      </div>
+                      <div class = "bottom">
+                      <p>Greg Nuckols
+                      </p>
+                      <p>Champion Powerlifter, Coach, Founder of Stronger By Science
+                      </p>
+                      </div>
+                      </div>
+                    </li>
+
+                         
+                  <li>
+                    <div class = "li_cotainer">
+                      <div class="top">
+                      <div><img width="auto" height="30" src="/img/coach/HadynWiseMan.jpg"></div>
+                      </div>
+                      <div class = "bottom">
+                      <p>Jonnie Candito
+                      </p>
+                      <p>Champion Powerlifter, Founder of CanditoTrainingHQ
+                      </p>
+                      </div>
+                      </div>
+                    </li>
+
+                    <li>
+                      <div class = "li_cotainer">
+                        <div class="top">
+                        <div><img width="auto" height="30" src="/img/coach/Cody Lefever.jpg"></div>
+                        </div>
+                        <div class = "bottom">
+                        <p>Cody Lefever
+
+
+                        </p>
+                        <p>Marine, Competitive Powerlifter, and founder of GZCL Method
+                        </p>
+                        </div>
+                        </div>
+                      </li>
+        </ul>
+    </div>
+  </main> 
 </body>
+<script src="/scroll_event/scroll_event.js"></script>
 <script src="/main_page/auth.js"></script>
 <script src="/main_page/log_out.js"></script>
 <script src="/main_page/get_name.js"></script>

@@ -20,7 +20,11 @@
 <link rel="stylesheet" href="/user_page/modal_box.css">
 <link rel="stylesheet" href="/scroll_event/scroll_event.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
+   <!-- 아이태그 -->
+   <link
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+   rel="stylesheet"
+ />
   <title>Document</title>
 </head>
 <style>
@@ -183,7 +187,9 @@ main {
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  height: 1300px;
   position: absolute;
+  margin-bottom: 20px;
 }
    #content_container {
     margin-top: 50px;
@@ -222,26 +228,28 @@ main {
    }
    /* 게시물 테이블 */
    #my_posts {
-    width: 100%;
+    width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 100px;
-
+    margin-bottom: 100px;
    }
    #my_posts > p{
-    background-color: black;
     border-radius: 10px;
-    color: white;
     text-align: center;
     width: 80%;
     font-size: 2rem;
+    margin-bottom: 50px;
    }
    #my_posts > table {
     width: 80%;
     height: 100%;
     text-align: center;
+    padding-bottom: 100px;
    }
    #my_posts > table td:nth-of-type(2){
     width: 400px;
@@ -270,6 +278,64 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
     width: 50px;
     background-color: rgb(206, 206, 206);
     border-radius: 5px;
+   }
+   #comment_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   #comment{
+    width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 10px;
+   }
+   #comment p{
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 50px;
+   }
+   ul{
+    display: flex;
+    flex-direction: row;
+    padding-right: 30px;
+   }
+   li {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 10px;
+    padding: 10px;
+    height: 250px;
+   }
+   li div {
+    flex: 1;
+   }
+   li div:nth-of-type(2){
+    flex: 5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   }
+   li #btn{
+    margin-top: 30px;
+    display: flex;
+   }
+   #btn button{
+    width: 100px;
+    border-radius: 5px;
+    margin-right: 5px;
+    height: 40px;
+    border: none;
+    background-color: rgb(212, 212, 212);
+   }
+   #ul_container{
+    overflow-x: auto;
+    padding-right: 20px;
+    padding-bottom: 40px;
    }
    </style>
 <body>
@@ -381,6 +447,15 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
       </tbody>
     </table>
   </div>
+
+  <div id="comment_container">
+    <div id="comment"> 
+      <p>내가 작성한 운동 프로그램 댓글</p>
+      <div id="ul_container">
+        <ul></ul>
+      </div>
+    </div>
+  </div>
     </div>
   </main>
   </div>
@@ -390,7 +465,7 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
       <div>
         <div>123</div>
         <p>게시물 수정하기</p>
-        <div> <i class="fa-solid fa-x"></i></div>
+        <div> <i class="fa-solid fa-x x_box"></i></div>
       </div>
       <div> 제목 :<input type="text" id="modal_title"></div>
       <div> 내용 :<textarea id ="modal_textarea"></textarea></div>

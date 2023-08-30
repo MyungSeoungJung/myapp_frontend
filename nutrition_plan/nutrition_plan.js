@@ -24,7 +24,9 @@ function getCookie(name) {
     },
   });
   const user = await response.json(); //
-  username.textContent = user.name + "님";
+  // username.textContent = user.name + "님";
+  username.innerHTML = `<a href="/user_page/user_page.html">${user.name}님 <i class="fa-solid fa-user"></i></a>`;
+
   console.log(user);
   let targetCal = "";
   let basicCal = "";

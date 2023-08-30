@@ -53,9 +53,9 @@ function getCookie(name) {
   const result = await response.json(); //
 
   name.textContent = result.name;
-  age.textContent = result.age;
-  height.textContent = result.height;
-  weight.textContent = result.weight;
+  age.textContent = result.age + "세";
+  height.textContent = result.height + "cm";
+  weight.textContent = result.weight + "kg";
   program.textContent = result.programName;
 
   // 유저가 작성한 포스트 가져오기
@@ -89,7 +89,6 @@ const delete_btn = document.querySelectorAll(".delete");
 // 삭제 이벤트
 document.addEventListener("DOMContentLoaded", () => {
   const tbody = document.querySelector("#myPosts_body");
-
   tbody.addEventListener("click", async (e) => {
     e.preventDefault();
 
@@ -100,21 +99,27 @@ document.addEventListener("DOMContentLoaded", () => {
       const tr = target.parentElement.parentElement;
       const no = tr.dataset.no;
 
-      const response = await fetch(
-        `http://localhost:8080/posts/deletePost?no=${no}`,
-        {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${getCookie("token")}`,
-            "content-type": "application/json",
-          },
+      const shouldDelete = confirm("게시물을 삭제하시겠습니까?");
+
+      if (shouldDelete) {
+        const response = await fetch(
+          `http://localhost:8080/posts/deletePost?no=${no}`,
+          {
+            method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${getCookie("token")}`,
+              "content-type": "application/json",
+            },
+          }
+        );
+
+        if (response.ok) {
+          tr.remove();
         }
-      );
-      tr.remove();
+      }
     }
   });
 });
-
 // x박스 클릭시 모달창 닫기
 const x_box = document.querySelector(".fa-solid");
 const modal_box = document.querySelector("#modal_box_container");
@@ -165,3 +170,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function createUl(no, userId, content, userName, programTitle) {
+  const li = document.createElement("li");
+
+  li.dataset.no = no;
+  li.dataset.creatorId = userId;
+  li.innerHTML = /*html*/ `
+  <div>Exercies: ${programTitle}</div>
+  <div>${content}</div>
+  <div>${userName}</div>  
+
+  <div id= "btn">
+  <button class ="comment_modify">수정</button>
+  <button class ="comment_delete">삭제</button>
+  </div>
+  `;
+  return li;
+}
+// 내가 작성한 댓글 가져오기
+(async () => {
+  // 유저가 작성한 포스트 가져오기
+  const getMyComment = await fetch("http://localhost:8080/program/myComment", {
+    headers: {
+      //getCookie함수 호출
+      Authorization: `Bearer ${getCookie(
+        "token" //토큰을 get해서
+      )}`,
+    },
+  });
+  const result3 = await getMyComment.json();
+
+  const ul = document.querySelector("ul");
+  for (let item of result3) {
+    const programTitle = item.program.programTitle;
+    ul.append(
+      createUl(item.id, item.userId, item.content, item.userName, programTitle)
+    );
+  }
+})(); // 즉시실행

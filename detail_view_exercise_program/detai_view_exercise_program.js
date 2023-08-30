@@ -52,8 +52,10 @@ function getCookie(name) {
   );
   return matches ? decodeURIComponent(matches[1]) : undefined;
 }
+// 댓글 추가
 btn.addEventListener("click", async () => {
   const text_area = document.querySelector("#comment");
+  const comment_null = document.querySelector("#comment_null");
   const id = window.location.search;
   const response = await fetch(`http://localhost:8080/program/comments${id}`, {
     method: "POST",
@@ -77,6 +79,7 @@ btn.addEventListener("click", async () => {
       result.userAge
     )
   );
+  comment_null.style.display = "none";
 });
 
 // 댓글 가져오기

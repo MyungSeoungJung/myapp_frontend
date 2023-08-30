@@ -43,13 +43,13 @@
   flex: 1;
   justify-content: end;
  }
- .fa-solid{
+ .x_box{
   font-size: 1.5rem;
   margin-top: 5px;
   height: 30px;
   color: white;
  }
- .fa-solid:hover {
+ .x_box:hover {
   color: red;
  }
  #modal_box > div:nth-of-type(1) > p{

@@ -8,6 +8,5 @@
   }); //함수 구현
   const result = await response.json(); //
   console.log(result);
-
-  username.textContent = result.name + "님";
+  username.innerHTML = `<a href="/user_page/user_page.html">${result.name}님 <i class="fa-solid fa-user"></i></a>`;
 })(); // 즉시실행

@@ -26,7 +26,8 @@ const coach_name = document.querySelector("#coach_name");
   }); //함수 구현
   const user_result = await username.json(); //
   console.log(user_result);
-  usertext.textContent = user_result.name + "님";
+  // usertext.textContent = user_result.name + "님";
+  usertext.innerHTML = `<a href="/user_page/user_page.html">${user_result.name}님 <i class="fa-solid fa-user"></i></a>`;
 
   // 프로그램 get
   const response = await fetch("http://localhost:8080/program/myExercise", {
