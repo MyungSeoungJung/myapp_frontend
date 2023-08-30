@@ -70,7 +70,7 @@ function getCookie(name) {
   const result2 = await getPost.json();
 
   for (let item of result2) {
-    tbody.append(
+    tbody.prepend(
       createRow(
         item.no,
         item.content,
@@ -204,7 +204,7 @@ function createUl(no, userId, content, userName, programTitle) {
   const ul = document.querySelector("ul");
   for (let item of result3) {
     const programTitle = item.program.programTitle;
-    ul.append(
+    ul.prepend(
       createUl(item.id, item.userId, item.content, item.userName, programTitle)
     );
   }

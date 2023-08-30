@@ -60,7 +60,7 @@ modal_wrtie_btn.addEventListener("click", async () => {
     .toString()
     .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")}`;
 
-  tbody.append(
+  tbody.prepend(
     createRow(
       data.no,
       data.content,
@@ -79,7 +79,7 @@ modal_wrtie_btn.addEventListener("click", async () => {
   result = await response.json();
   const ul = document.querySelector("ul");
   for (let item of result) {
-    tbody.append(
+    tbody.prepend(
       createRow(
         item.no,
         item.content,

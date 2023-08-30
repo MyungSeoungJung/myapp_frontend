@@ -111,3 +111,40 @@ btn.addEventListener("click", async () => {
     }
   }
 })();
+
+const change_btn = document.querySelector("#change_btn button");
+change_btn.addEventListener("click", async (e) => {
+  e.preventDefault();
+  if (confirm("운동 프로그램을 바꾸시겠습니까?")) {
+    const programTitle = document.querySelector("#program_title").textContent;
+    console.log(programTitle);
+
+    const response = await fetch(
+      `http://localhost:8080/program/changeProgram`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${getCookie("token")}`,
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          programTitle,
+        }),
+      }
+    );
+
+    // 만료일을 과거로 설정하여 쿠키 삭제
+    function expireCookie(cookieName, cookieDomain) {
+      const pastDate = new Date(1970, 1, 1); // 과거 날짜로 설정
+      const formattedDate = pastDate.toUTCString();
+
+      // 만료일을 과거 날짜로 설정한 후, 쿠키를 설정
+      document.cookie = `${cookieName}=; expires=${formattedDate}; path=/; domain=${cookieDomain}`;
+    }
+
+    // 쿠키 만료시키고 로그인 페이지로 리다이렉트
+    expireCookie("token", "localhost");
+    alert("사용자 정보 업데이트를 위해 로그아웃됩니다.");
+    location.href = "/index.html"; // 로그인 페이지 경로로 변경해주세요
+  }
+});
