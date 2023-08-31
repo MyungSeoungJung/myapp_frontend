@@ -1,3 +1,16 @@
+function creatBox(id, img, programGoal, programTitle, coachName) {
+  const box = document.createElement("div");
+  box.classList.add("programBox");
+  box.dataset.no = id;
+  box.innerHTML = `
+
+    <div id ="top"><img width="auto" height="30" src="${img}"></div>
+    <div id ="bottom"><p>${programTitle}</p> <div><p>${coachName}</p><p>${programGoal}</p></div></div>
+
+`;
+  return box;
+}
+
 (async () => {
   const response = await fetch("http://localhost:8080/user/main", {
     headers: {
@@ -9,6 +22,29 @@
   const result = await response.json(); //
   console.log(result);
   username.innerHTML = `<a href="/user_page/user_page.html">${result.name}님 <i class="fa-solid fa-user"></i></a>`;
+  const content = document.querySelector(".main_content");
+
+  // 운동 프로그램 가져오기
+  const getPost = await fetch("http://localhost:8080/program/bestProgram");
+
+  const postesult = await getPost.json();
+
+  let count = 0;
+  for (let item of postesult) {
+    if (count >= 4) {
+      break;
+    }
+    content.prepend(
+      creatBox(
+        item.id,
+        item.img,
+        item.programGoal,
+        item.programTitle,
+        item.coachName
+      )
+    );
+    count++;
+  }
 })(); // 즉시실행
 
 // 로그아웃-------------------------------------------------------------------------------------------------

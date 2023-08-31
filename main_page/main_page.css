@@ -152,10 +152,46 @@
   background-color: black;
   margin-left: 10px;
   border-radius: 10px;
-  
 }
 
-
+.programBox{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 10px;
+  border-radius: 10px;
+  height: 250px;
+}
+.programBox #top img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.programBox #top {
+flex: 1;
+}
+.programBox #bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 0.1;
+}
+.programBox #bottom p {
+  font-size: 0.8rem;
+}
+.programBox #bottom div{
+  display: flex;
+  flex-direction: row;
+}
+.programBox #bottom div p:nth-of-type(1) {
+  margin-right: 5px;
+}
+.programBox #bottom div p:nth-of-type(2)  {
+ background-color: rgb(207, 207, 207);
+ border-radius: 5px;
+ padding-left: 5px;
+ padding-right: 5px;
+}
 
    /* 코치 소개  부분 ------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -201,7 +237,7 @@
      display: flex;
      flex-direction: row;
      justify-content: center;
-     margin-bottom: 100px;
+     margin-bottom: 30px;
    }
   #main_top_rank_workout_program_container p{
   font-size: 2rem;

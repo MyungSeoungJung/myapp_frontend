@@ -80,6 +80,7 @@ btn.addEventListener("click", async () => {
     )
   );
   comment_null.style.display = "none";
+  text_area.value = "";
 });
 
 // 댓글 가져오기

@@ -5,19 +5,20 @@
 }
 
 #recommend_program {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
-  display: flex;
-  width: 100vw;
-  height: 100vh;
+  position: fixed;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
 
 }
 
 #recommend_program_content {
   margin: auto;
-  margin-top: 80px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,6 +27,7 @@
   height: 820px;
   border-radius: 20px;
   overflow: hidden;
+  
 }
 
 #recommend_program_content h1 {
