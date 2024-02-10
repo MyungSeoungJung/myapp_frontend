@@ -1,5 +1,5 @@
 (async () => {
-  const response = await fetch("http://localhost:8080/user/main", {
+  const response = await fetch("http://localhost:8080/user/displayUserName", {
     headers: {
       Authorization: `Bearer ${getCookie(
         "token" //토큰을 get해서

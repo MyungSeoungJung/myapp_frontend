@@ -6,8 +6,8 @@ function getCookie(name) {
   let matches = document.cookie.match(
     new RegExp(
       "(?:^|; )" +
-        name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
-        "=([^;]*)"
+      name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
+      "=([^;]*)"
     )
   );
   return matches ? decodeURIComponent(matches[1]) : undefined;
@@ -18,15 +18,13 @@ function getCookie(name) {
 })();
 // 매크로 계산식
 (async () => {
-  const response = await fetch("http://localhost:8080/user/main", {
+  const response = await fetch("http://localhost:8080/user/userInfoResponse", {
     headers: {
       Authorization: `Bearer ${getCookie("token")}`,
     },
   });
-  const user = await response.json(); //
-  // username.textContent = user.name + "님";
-  username.innerHTML = `<a href="/user_page/user_page.html">${user.name}님 <i class="fa-solid fa-user"></i></a>`;
 
+  const user = await response.json();
   console.log(user);
   let targetCal = "";
   let basicCal = "";
@@ -39,11 +37,13 @@ function getCookie(name) {
     basicCal = bmr * user.activity;
   }
   // 일일 목표 칼로리
-  if (user.userChoiceGoal == "근력증가") {
+  if (user.userChoiceGoal == "근력운동") {
     targetCal = basicCal + user.goalCal;
   } else if (user.userChoiceGoal == "다이어트") {
     targetCal = basicCal - user.goalCal;
   }
+
+
   // 일일 권장 칼로리 삽입
   calorie.textContent = parseFloat(targetCal).toFixed(2) + "Kcal";
 

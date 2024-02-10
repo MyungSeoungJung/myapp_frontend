@@ -177,6 +177,7 @@ recommend_program_btn.addEventListener("click", async () => {
 
   const warnnig_text = document.querySelector("#warnning > p");
   warnnig_text.textContent = "모든 인적사항을 입력해주세요";
+
   warnning_Check_btn.addEventListener("click", (e) => {
     e.preventDefault();
     warnning_box.style.display = "none";
@@ -232,11 +233,12 @@ recommend_program_content.addEventListener("click", (e) => {
       recommend_program.style.display = "none";
     });
   } //if문
+
 }); // 이벤트 리스너
 
 // 회원 인적사항 제출
 complete.addEventListener("click", async () => {
-  const response = await fetch("http://localhost:8080/user/signup", {
+  const response = await fetch("http://localhost:8080/auth/signup", {
     method: "POST",
     headers: {
       "content-type": "application/json",
